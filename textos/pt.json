@@ -1,0 +1,415 @@
+{
+  "_leia": "Todo o texto da página mora aqui (português do Brasil). Edite este arquivo e rode `node _montar.cjs`; nunca edite o index.html gerado. Os LINKS DO CHECKOUT ficam só em config.checkout. {{p.basico}}, {{p.completo}} etc. viram o preço formatado em R$.",
+  "config": {
+    "lang": "pt-BR",
+    "saida": ".",
+    "moeda": {
+      "simbolo": "R$",
+      "antes": true,
+      "espaco": true,
+      "decimal": ",",
+      "milhar": "."
+    },
+    "precos": {
+      "_nota": "Preços e âncoras dados pelo Heitor (26/10/2026), iguais aos da página do Split. Parcelas como ele passou; conferir com o que a Wiapy mostrar no checkout.",
+      "basico": 17.9,
+      "deBasico": 47.9,
+      "parcelasBasico": "4x de R$ 4,48",
+      "completo": 27.9,
+      "deCompleto": 147.9,
+      "parcelasCompleto": "6x de R$ 6,32"
+    },
+    "garantiaDias": 30,
+    "checkout": {
+      "basico": "TROCAR-CHECKOUT-BASICO",
+      "completo": "TROCAR-CHECKOUT-COMPLETO"
+    },
+    "_checkout": "TROCAR: quando o Cadastrador criar os checkouts na Wiapy (pay.wiapy.com/...), colar os 2 links aqui (um lugar só) e rodar node _montar.cjs. Todo botão de compra usa estes valores e tem o atributo data-checkout.",
+    "backRedirect": false,
+    "_backRedirect": "Desligado: a oferta de saída (promo, escada padrão R$ 8,90) ainda não tem checkout. Ligar só quando o Heitor decidir; aí criar _fonte/promo.html. O script já deixa passar quem vai para pay.wiapy.com.",
+    "pixelMeta": "TROCAR-PIXEL-META",
+    "utmifyPixel": "TROCAR-UTMIFY-PIXEL"
+  },
+  "meta": {
+    "titulo": "HIDRODIAG · 120 Diagnósticos de Hidráulica Residencial",
+    "descricao": "120 diagnósticos prontos de hidráulica residencial: sintoma, causas prováveis, verificações na ordem e próximo passo em uma página só. Para abrir no celular ou imprimir e consultar durante o atendimento."
+  },
+  "topo": "⚡ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE <span class=\"js-data\"></span>",
+  "hero": {
+    "pill": "+120 Diagnósticos de Hidráulica Residencial",
+    "h1": "120 diagnósticos prontos para achar a causa do problema hidráulico <span class=\"neon\">antes de quebrar a parede</span> ou trocar qualquer peça",
+    "sub": "Prontos para abrir no celular ou imprimir e consultar durante o atendimento, com o problema na sua frente.",
+    "imgAlt": "Caixa do HIDRODIAG, 120 diagnósticos de hidráulica residencial, com as fichas atrás e os 6 bônus na frente",
+    "p1": "Você já sabe mexer com hidráulica. <b>O que trava é descobrir a causa.</b>",
+    "p2": "O cliente mostra a mancha na parede, a descarga que não para, o chuveiro fraco. Você fecha registro, olha o hidrômetro, testa daqui e dali, e mesmo assim fica na dúvida: é o flexível, é a vedação, é uma conexão dentro da parede ou é a pressão que chega na casa? Aí você para o serviço para procurar vídeo, manda mensagem no grupo, decide no chute. E às vezes o azulejo é quebrado no lugar errado.",
+    "p3": "Com o <b>HIDRODIAG</b> o cliente mostra o problema, você abre o diagnóstico e já sabe por onde começar a investigar. São 120 diagnósticos que mostram, em uma página só, o sintoma, as causas mais prováveis, as verificações na ordem certa e o próximo passo.",
+    "p4": "Não é curso para assistir depois. É consulta para usar na hora, com o cliente do lado.",
+    "lista": [
+      "120 diagnósticos organizados por sintoma e por tipo de problema",
+      "Sintoma, causas prováveis, verificações e próximo passo na mesma página",
+      "Índice por sintoma para achar o diagnóstico em segundos",
+      "Organizado pelo problema, não pela marca da peça, então vale para o que você encontra no dia a dia",
+      "Versão digital e imprimível, com acesso vitalício"
+    ],
+    "cta": "QUERO OS 120 DIAGNÓSTICOS",
+    "entrega": "📩 Você recebe tudo na hora, direto no seu e-mail"
+  },
+  "fichas": {
+    "h2": "VEJA COMO SÃO OS DIAGNÓSTICOS QUE VOCÊ VAI RECEBER",
+    "celularAlt": "Mão de encanador segurando o celular com um diagnóstico aberto, na frente de uma caixa acoplada aberta",
+    "dica": "Toque numa ficha para ver em tamanho grande",
+    "trilho1": [
+      {
+        "img": "assets/fichas/a1.webp",
+        "alt": "Diagnóstico 001: CONTA DE ÁGUA SUBIU E NÃO APARECE VAZAMENTO"
+      },
+      {
+        "img": "assets/fichas/a2.webp",
+        "alt": "Diagnóstico 002: MANCHA DE UMIDADE NA PAREDE PERTO DO BANHEIRO"
+      },
+      {
+        "img": "assets/fichas/a3.webp",
+        "alt": "Diagnóstico 005: PISO ÚMIDO OU PISO DE MADEIRA ESTUFANDO"
+      },
+      {
+        "img": "assets/fichas/a4.webp",
+        "alt": "Diagnóstico 026: RALO COM MAU CHEIRO SEM ESTAR ENTUPIDO"
+      },
+      {
+        "img": "assets/fichas/a5.webp",
+        "alt": "Diagnóstico 027: PIA DA COZINHA ESCOANDO DEVAGAR"
+      },
+      {
+        "img": "assets/fichas/a6.webp",
+        "alt": "Diagnóstico 047: TORNEIRA DA COZINHA COM POUCA ÁGUA E O RESTO NORMAL"
+      }
+    ],
+    "_fichas": "Fichas do nosso entregável (Downloads/Hidraulica Diagnosticos/Entregavel/paginas): as 12 dos criativos CRT 01-13."
+  },
+  "possui": {
+    "h2": "OS +120 DIAGNÓSTICOS POSSUEM:",
+    "itens": [
+      {
+        "icone": "sintoma",
+        "txt": "Um problema inteiro em uma página só: sintoma, causas mais prováveis, verificações na ordem e próximo passo."
+      },
+      {
+        "icone": "ordem",
+        "txt": "Organização por sintoma e por tipo de problema, com índice para achar o diagnóstico em poucos toques."
+      },
+      {
+        "icone": "visual",
+        "txt": "Versão digital para o celular e versão A4 para imprimir e deixar na caixa de ferramentas."
+      },
+      {
+        "icone": "baixar",
+        "txt": "Download imediato, sem mensalidade e com acesso vitalício."
+      }
+    ]
+  },
+  "urgencia": {
+    "kicker": "Aproveite a oferta por tempo limitado",
+    "h2": "Quantas paredes você ainda vai abrir antes de ter certeza de onde estava o vazamento?",
+    "cta": "QUERO ACESSAR AGORA",
+    "trilho2": [
+      {
+        "img": "assets/fichas/b1.webp",
+        "alt": "Diagnóstico 049: REGISTRO VAZANDO PELO VOLANTE QUANDO ABRE"
+      },
+      {
+        "img": "assets/fichas/b2.webp",
+        "alt": "Diagnóstico 063: VÁLVULA DE DESCARGA DISPARADA, JORRANDO SEM PARAR"
+      },
+      {
+        "img": "assets/fichas/b3.webp",
+        "alt": "Diagnóstico 076: CHUVEIRO FRACO E O RESTO DA CASA NORMAL"
+      },
+      {
+        "img": "assets/fichas/b4.webp",
+        "alt": "Diagnóstico 091: CAIXA-D'ÁGUA TRANSBORDANDO PELO LADRÃO"
+      },
+      {
+        "img": "assets/fichas/b5.webp",
+        "alt": "Diagnóstico 104: PRESSURIZADOR LIGA SOZINHO COM A CASA PARADA"
+      },
+      {
+        "img": "assets/fichas/b6.webp",
+        "alt": "Diagnóstico 113: BARULHO DE ÁGUA CORRENDO NA PAREDE COM TUDO FECHADO"
+      }
+    ]
+  },
+  "ideal": {
+    "h2": "ESTE MATERIAL É IDEAL PARA VOCÊ QUE DESEJA",
+    "itens": [
+      {
+        "tit": "Parar de diagnosticar no chute",
+        "txt": "Ter um caminho definido para cada sintoma, em vez de ir trocando peça até o problema sumir."
+      },
+      {
+        "tit": "Saber por onde começar",
+        "txt": "Abrir no sintoma que o cliente mostrou e já ter a primeira verificação na frente, sem ficar decidindo por onde atacar."
+      },
+      {
+        "tit": "Confirmar antes de quebrar ou trocar",
+        "txt": "Fazer as verificações que descartam as outras causas antes de abrir parede ou piso, ou de trocar registro, válvula e reparo."
+      },
+      {
+        "tit": "Não parar o serviço para procurar vídeo",
+        "txt": "Tirar a dúvida no próprio celular, em segundos, sem depender de YouTube, de grupo de WhatsApp ou de ligar para alguém."
+      },
+      {
+        "tit": "Falar com segurança na frente do cliente",
+        "txt": "Explicar o que está acontecendo e o que precisa ser feito com base em verificação, não em suposição."
+      },
+      {
+        "tit": "Fechar o serviço mais rápido",
+        "txt": "Perder menos tempo em tentativa e erro e sobrar espaço na agenda para o próximo chamado."
+      }
+    ]
+  },
+  "recebe": {
+    "h2": "TUDO O QUE VOCÊ VAI RECEBER",
+    "pill": "⚡ ACESSO IMEDIATO",
+    "h3": "TUDO FOI ORGANIZADO PARA SER CONSULTADO NO MEIO DO ATENDIMENTO.",
+    "p": "Você abre o índice, acha o sintoma que está na sua frente e usa o diagnóstico com o problema ali, do seu lado.",
+    "imgAlt": "Pacote completo do HIDRODIAG: a caixa com os 120 diagnósticos e os 6 bônus",
+    "produto": "120 diagnósticos de problemas de hidráulica residencial",
+    "_blocos": "Descrições conferidas com Downloads/Hidraulica Diagnosticos/Entregavel/plano/indice-120.json em 26/10/2026. Se o plano mudar, atualizar aqui.",
+    "blocos": [
+      {
+        "tit": "Bloco 1, vazamentos e infiltrações (25):",
+        "txt": "conta de água que subiu sem vazamento aparente, mancha na parede e no teto, piso estufando, cavalete e hidrômetro, infiltração de chuva e a mancha que volta depois do conserto"
+      },
+      {
+        "tit": "Bloco 2, entupimentos e esgoto (20):",
+        "txt": "pia e ralo escoando devagar, vaso entupido, caixa de gordura e de inspeção, esgoto voltando pelo ralo, mau cheiro e fossa"
+      },
+      {
+        "tit": "Bloco 3, torneiras e registros (15):",
+        "txt": "torneira pingando, registro que não fecha ou vaza pelo volante, monocomando, engate flexível e torneira elétrica"
+      },
+      {
+        "tit": "Bloco 4, vasos sanitários e descargas (15):",
+        "txt": "caixa acoplada enchendo sem parar, válvula de descarga disparada, descarga fraca, água no pé do vaso e ducha higiênica"
+      },
+      {
+        "tit": "Bloco 5, chuveiros, pressão e vazão (15):",
+        "txt": "chuveiro fraco, pouca pressão na casa inteira, chuveiro elétrico que não esquenta ou dá choque, aquecedor a gás e solar"
+      },
+      {
+        "tit": "Bloco 6, caixas-d'água e boias (10):",
+        "txt": "caixa transbordando pelo ladrão, caixa que não enche, vazamento no fundo, boia batendo, boia elétrica e cisterna"
+      },
+      {
+        "tit": "Bloco 7, bombas e pressurizadores (10):",
+        "txt": "bomba que não liga ou não puxa água, que liga e desliga sozinha, pressurizador ligando com a casa parada, barulho e bomba de poço"
+      },
+      {
+        "tit": "Bloco 8, outros problemas hidráulicos (10):",
+        "txt": "batida e assovio no cano, barulho de água na parede com tudo fechado, água amarelada ou leitosa e máquina de lavar que enche devagar"
+      }
+    ],
+    "extras": [
+      "Índice de navegação por sintoma",
+      "Guia inicial de utilização",
+      "Arquivos em alta resolução",
+      "Versão para celular, tablet e computador",
+      "Versão imprimível em A4",
+      "Download imediato"
+    ],
+    "fim": "Acesso vitalício a todo o material recebido"
+  },
+  "bonus": {
+    "h2": "E NÃO PARA POR AÍ… TEM MAIS!",
+    "sub": "No Plano Completo você também vai receber…",
+    "pill": "🎁 6 BÔNUS EXCLUSIVOS",
+    "valorTxt": "Valor:",
+    "gratis": "GRÁTIS",
+    "itens": [
+      {
+        "img": "assets/bonus-1.webp",
+        "tit": "+40 Diagnósticos Extras de Problemas Menos Frequentes",
+        "curto": "+40 Diagnósticos Extras de Problemas Menos Frequentes",
+        "txt": "Mais 40 diagnósticos daqueles casos que aparecem de vez em quando e que, justamente por isso, você não tem na ponta da língua. Mesma estrutura: sintoma, causas prováveis, verificações e próximo passo.",
+        "valor": 27
+      },
+      {
+        "img": "assets/bonus-2.webp",
+        "tit": "+30 Diagnósticos de Erros de Instalação Hidráulica",
+        "curto": "+30 Diagnósticos de Erros de Instalação",
+        "txt": "30 diagnósticos para perceber quando o problema não é da peça, e sim de como a instalação foi feita: caimento do esgoto, falta de ventilação, conexão mal colada, vedação errada. Serve para separar o que é manutenção do que é serviço mal feito.",
+        "valor": 27
+      },
+      {
+        "img": "assets/bonus-3.webp",
+        "tit": "Guia Rápido de Ferramentas para Diagnóstico",
+        "curto": "Guia Rápido de Ferramentas para Diagnóstico",
+        "txt": "Qual ferramenta usar em cada verificação (haste e sonda de desentupimento, manômetro, geofone, câmera de inspeção), o que dá para confirmar com o que você já tem na caixa e em que caso o instrumento faz falta de verdade.",
+        "valor": 27
+      },
+      {
+        "img": "assets/bonus-4.webp",
+        "tit": "Tabela de Bitolas, Conexões e Pressões",
+        "curto": "Tabela de Bitolas, Conexões e Pressões",
+        "txt": "Medida do tubo em milímetro e em polegada, as conexões mais usadas e as faixas de pressão de referência, numa tabela pronta para abrir no celular durante o serviço.",
+        "valor": 27
+      },
+      {
+        "img": "assets/bonus-5.webp",
+        "tit": "Checklist Antes de Quebrar a Parede",
+        "curto": "Checklist Antes de Quebrar a Parede",
+        "txt": "Uma lista objetiva para rodar antes de abrir parede ou piso. Se algum item não foi verificado, você ainda não sabe onde está o vazamento.",
+        "valor": 27
+      },
+      {
+        "img": "assets/bonus-6.webp",
+        "tit": "Guia dos Erros de Diagnóstico Mais Comuns e Como Evitá-los",
+        "curto": "Guia dos Erros de Diagnóstico Mais Comuns",
+        "txt": "Os enganos que mais fazem encanador quebrar no lugar errado ou trocar peça boa: sintoma parecido, conclusão apressada, teste feito na ordem errada. Cada erro com o que fazer para não cair nele.",
+        "valor": 27
+      }
+    ]
+  },
+  "oferta": {
+    "faixa": "🔥 ÚLTIMA CHANCE: OFERTA TERMINA HOJE",
+    "h2": "ESCOLHA A MELHOR OPÇÃO PARA VOCÊ",
+    "basico": {
+      "tit": "PLANO BÁSICO",
+      "imgAlt": "Caixa do HIDRODIAG com os 120 diagnósticos",
+      "recebe": "Você recebe:",
+      "itens": [
+        "120 Diagnósticos de Hidráulica Residencial",
+        "Sintoma, causas prováveis, verificações e próximo passo em cada página",
+        "Índice por sintoma e guia inicial de utilização",
+        "Versão digital e imprimível",
+        "Acesso imediato e vitalício"
+      ],
+      "cta": "QUERO O PLANO BÁSICO"
+    },
+    "ponte": "Veja o que entra a mais no Plano Completo 👇",
+    "completo": {
+      "selo": "⚡ MAIS VENDIDO",
+      "tit": "PLANO COMPLETO",
+      "tag": "⚡ 120 diagnósticos + 6 bônus",
+      "imgAlt": "Pacote completo do HIDRODIAG com os 6 bônus",
+      "itens": [
+        "120 Diagnósticos de Hidráulica Residencial",
+        "Sintoma, causas prováveis, verificações e próximo passo em cada página",
+        "Índice por sintoma e guia inicial de utilização",
+        "Versão digital e imprimível"
+      ],
+      "bonusPrefixo": "🎁 Bônus",
+      "extras": [
+        "Atualizações futuras da biblioteca",
+        "<b>Acesso vitalício a todo o material</b>"
+      ],
+      "cta": "QUERO O PLANO COMPLETO"
+    },
+    "de": "de",
+    "economia": "Você economiza",
+    "argumento": "UMA ÚNICA PAREDE QUEBRADA NO LUGAR ERRADO CUSTA MAIS QUE O PLANO COMPLETO.",
+    "argumento2": "Os diagnósticos ficam com você para todos os atendimentos que vierem.",
+    "seguro": "🔒 Compra 100% segura e garantida.",
+    "por": "por:"
+  },
+  "garantia": {
+    "h2": "GARANTIA DE {{garantiaDias}} DIAS: ZERO RISCO PRA VOCÊ",
+    "selo1": "SATISFAÇÃO GARANTIDA",
+    "selo2": "{{garantiaDias}} DIAS",
+    "selo3": "OU SEU DINHEIRO DE VOLTA",
+    "selo4": "GARANTIA",
+    "intro": "Isso significa que, se nos próximos {{garantiaDias}} dias você achar que:",
+    "itens": [
+      "os diagnósticos não são o que você esperava,",
+      "o material não serve para o tipo de serviço que você atende,",
+      "ou simplesmente não quiser continuar com ele,"
+    ],
+    "fim": "você pede o reembolso e recebe 100% do valor de volta. Sem burocracia. O risco fica todo do nosso lado."
+  },
+  "acesso": {
+    "h2": "COMO É O ACESSO",
+    "sub": "(Veja como é simples acessar os diagnósticos)",
+    "passos": [
+      {
+        "icone": "compra",
+        "tit": "Conclua sua compra",
+        "txt": "Depois do pagamento, seu acesso é liberado automaticamente.",
+        "itens": [
+          "Pagamento seguro",
+          "Confirmação imediata",
+          "Acesso direto ao material"
+        ]
+      },
+      {
+        "icone": "email",
+        "tit": "Abra o seu e-mail",
+        "txt": "Na mesma hora chega um e-mail com o acesso aos diagnósticos e aos bônus do seu plano.",
+        "itens": [
+          "Chega na hora",
+          "Organizado por sintoma",
+          "Download rápido dos PDFs"
+        ]
+      },
+      {
+        "icone": "baixar",
+        "tit": "Baixe os arquivos",
+        "txt": "Salve tudo no celular, no tablet ou no computador.",
+        "itens": [
+          "Alta resolução",
+          "Prontos para imprimir em A4",
+          "Ficam salvos com você"
+        ]
+      },
+      {
+        "icone": "consulta",
+        "tit": "Use no atendimento",
+        "txt": "Abra o diagnóstico com o problema na sua frente.",
+        "itens": [
+          "Busca rápida pelo índice",
+          "Consulta enquanto você trabalha",
+          "Acesso vitalício"
+        ]
+      }
+    ],
+    "cta": "QUERO ACESSAR AGORA"
+  },
+  "faq": {
+    "h2": "PERGUNTAS FREQUENTES",
+    "itens": [
+      {
+        "p": "Serve para casa e para apartamento?",
+        "r": "Sim. São problemas de hidráulica residencial, os mesmos que aparecem em casa e em apartamento: vazamento, entupimento, torneira, registro, descarga, chuveiro, caixa-d'água e bomba."
+      },
+      {
+        "p": "O material ensina instalação, obra ou reforma?",
+        "r": "Não. O foco é a etapa do diagnóstico, ou seja, achar a causa do problema e saber o que verificar antes de quebrar ou trocar peça. A execução do reparo, o projeto e as normas técnicas continuam sendo responsabilidade e critério do profissional."
+      },
+      {
+        "p": "Sou iniciante, vou conseguir usar?",
+        "r": "Sim. A linguagem é direta, sem teoria longa, e cada diagnóstico já vem com a ordem das verificações. É feito exatamente para quem sabe executar o serviço, mas ainda trava na hora de decidir qual é a causa."
+      },
+      {
+        "p": "Já tenho experiência, isso vai ser básico demais?",
+        "r": "É material de consulta, não é curso. Quem já tem estrada usa como checklist para não pular etapa, para conferir o problema que aparece pouco e para não quebrar parede por conclusão apressada."
+      },
+      {
+        "p": "O material faz o diagnóstico sozinho?",
+        "r": "Não. Quem diagnostica é você. O material organiza as causas prováveis, as verificações e a ordem delas, para você não depender só da memória nem de pesquisa no meio do atendimento."
+      },
+      {
+        "p": "Qual é o formato? Preciso de internet no local do serviço?",
+        "r": "São arquivos em PDF de alta resolução, para celular, tablet ou computador, com versão para imprimir em A4. Você baixa uma vez e os arquivos ficam salvos no aparelho, então dá para consultar mesmo sem sinal na casa do cliente."
+      },
+      {
+        "p": "E se eu não gostar?",
+        "r": "Você tem {{garantiaDias}} dias para pedir o reembolso, sem burocracia."
+      }
+    ]
+  },
+  "rodape": {
+    "direitos": "© Todos os direitos reservados.",
+    "aviso": "Este site não é afiliado ao Facebook nem a nenhuma entidade do Facebook. Depois que você sai do Facebook, a responsabilidade não é deles, e sim do nosso site. Fazemos todo o esforço para mostrar o produto com clareza. Não vendemos seu e-mail nem seus dados para terceiros e nunca mandamos spam.",
+    "termos": "Termos de uso",
+    "privacidade": "Política de privacidade"
+  }
+}
