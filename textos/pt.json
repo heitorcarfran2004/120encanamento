@@ -15,17 +15,21 @@
       "basico": 17.9,
       "deBasico": 47.9,
       "parcelasBasico": "4x de R$ 4,48",
-      "completo": 27.9,
+      "completo": 37,
       "deCompleto": 147.9,
-      "parcelasCompleto": "6x de R$ 6,32"
+      "parcelasCompleto": "6x de R$ 6,32",
+      "popup": 24.9,
+      "saida": 9.9
     },
     "garantiaDias": 30,
     "checkout": {
-      "basico": "TROCAR-CHECKOUT-BASICO",
-      "completo": "TROCAR-CHECKOUT-COMPLETO"
+      "basico": "https://pay.wiapy.com/YgwbY8V64Ly1",
+      "completo": "https://pay.wiapy.com/RPe4mLHhZQTY",
+      "popup": "TROCAR-CHECKOUT-POPUP"
     },
+    "checkoutSaida": "TROCAR-CHECKOUT-SAIDA",
     "_checkout": "TROCAR: quando o Cadastrador criar os checkouts na Wiapy (pay.wiapy.com/...), colar os 2 links aqui (um lugar só) e rodar node _montar.cjs. Todo botão de compra usa estes valores e tem o atributo data-checkout.",
-    "backRedirect": false,
+    "backRedirect": true,
     "_backRedirect": "Desligado: a oferta de saída (promo, escada padrão R$ 8,90) ainda não tem checkout. Ligar só quando o Heitor decidir; aí criar _fonte/promo.html. O script já deixa passar quem vai para pay.wiapy.com.",
     "pixelMeta": "TROCAR-PIXEL-META",
     "utmifyPixel": "TROCAR-UTMIFY-PIXEL"
@@ -33,6 +37,31 @@
   "meta": {
     "titulo": "HIDRODIAG · 120 Diagnósticos de Hidráulica Residencial",
     "descricao": "120 diagnósticos prontos de hidráulica residencial: sintoma, causas prováveis, verificações na ordem e próximo passo em uma página só. Para abrir no celular ou imprimir e consultar durante o atendimento."
+  },
+  "promo": {
+    "titulo": "Espera! Oferta só nesta página",
+    "topo": "⚠️ Este desconto some quando você sair desta página",
+    "pill": "Última chance",
+    "h1": "Leve os <span class=\"n\">120 diagnósticos</span> por {{p.saida}}",
+    "sub": "Você ia sair sem levar. Por isso baixamos o preço: as mesmas 120 fichas com sintoma, causas prováveis, verificações na ordem certa e próximo passo.",
+    "itens": [
+      "120 Diagnósticos de Hidráulica Residencial",
+      "Sintoma, causas prováveis, verificações e próximo passo em cada página",
+      "Índice por sintoma e guia inicial de utilização",
+      "Acesso imediato e vitalício",
+      "Garantia de {{garantiaDias}} dias"
+    ],
+    "de": "De",
+    "por": "por apenas",
+    "cta": "QUERO POR {{p.saida}}",
+    "nota": "Pagamento único · sem mensalidade · 🔒 Compra 100% segura"
+  },
+  "popup": {
+    "tit": "Espera, só nesta tela 🔧",
+    "sub": "Leve o <b>Plano Completo</b>, com os 120 diagnósticos e os 6 bônus, por um valor que não aparece em nenhum outro lugar do site.",
+    "nota": "só {{p.difPopup}} a mais que o básico",
+    "sim": "QUERO O PLANO COMPLETO",
+    "nao": "Continuar só com o básico"
   },
   "topo": "⚡ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE <span class=\"js-data\"></span>",
   "hero": {
@@ -51,8 +80,7 @@
       "Organizado pelo problema, não pela marca da peça, então vale para o que você encontra no dia a dia",
       "Versão digital e imprimível, com acesso vitalício"
     ],
-    "cta": "QUERO OS 120 DIAGNÓSTICOS",
-    "entrega": "📩 Você recebe tudo na hora, direto no seu e-mail"
+    "cta": "QUERO OS 120 DIAGNÓSTICOS"
   },
   "fichas": {
     "h2": "VEJA COMO SÃO OS DIAGNÓSTICOS QUE VOCÊ VAI RECEBER",

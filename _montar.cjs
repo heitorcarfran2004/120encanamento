@@ -26,7 +26,8 @@ function fmt(v, curto) {
 const P = C.precos;
 // 2 planos: preço, "de" (âncora riscada) e economia, com centavos (R$ 17,90 · de R$ 47,90 · economiza R$ 30,00)
 T.p = { basico: fmt(P.basico), deBasico: fmt(P.deBasico), ecoBasico: fmt(P.deBasico - P.basico),
-  completo: fmt(P.completo), deCompleto: fmt(P.deCompleto), ecoCompleto: fmt(P.deCompleto - P.completo) };
+  completo: fmt(P.completo), deCompleto: fmt(P.deCompleto), ecoCompleto: fmt(P.deCompleto - P.completo),
+  popup: fmt(P.popup), difPopup: fmt(P.popup - P.basico), saida: fmt(P.saida) };
 (T.bonus.itens || []).forEach((b) => { b.valorFmt = fmt(b.valor, true); });
 T.garantiaDias = C.garantiaDias;
 T.base = (C.saida && C.saida !== '.') ? '../' : '';

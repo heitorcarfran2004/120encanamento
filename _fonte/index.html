@@ -186,6 +186,23 @@ h2{font-size:clamp(27px,6.2vw,44px);font-weight:900;text-align:center}
 .completo .preco .parc{color:#C9D5E4}
 .preco .eco{font-weight:600;font-size:15px;margin-top:4px}
 .preco .eco::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--verde);margin-right:7px;vertical-align:1px}
+/* popup de upsell do Plano Básico (mesmo padrão de morangos-em-casa) */
+.modal[hidden]{display:none}
+.modal{position:fixed;inset:0;z-index:99;display:flex;align-items:center;justify-content:center;padding:16px}
+.modal-fundo{position:absolute;inset:0;background:rgba(11,35,64,.72);backdrop-filter:blur(2px);animation:aparece .18s ease}
+.modal-caixa{position:relative;background:#fff;color:var(--tinta);border-radius:20px;padding:clamp(28px,4vw,40px) clamp(20px,3.4vw,36px);width:100%;max-width:460px;text-align:center;box-shadow:0 30px 70px rgba(11,35,64,.4);animation:sobe .22s cubic-bezier(.2,.9,.3,1.2);max-height:92vh;overflow-y:auto}
+@keyframes aparece{from{opacity:0}to{opacity:1}}
+@keyframes sobe{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+.modal-x{position:absolute;top:10px;right:12px;background:none;border:none;font-size:26px;line-height:1;color:#8A97A8;cursor:pointer;padding:6px;font-family:inherit}
+.modal-caixa h3{font-size:clamp(21px,3vw,26px);margin:0 0 10px;color:var(--navy)}
+.modal-sub{font-size:15px;color:var(--cinza);line-height:1.55;margin:0 0 20px}
+.modal-preco{border:2px dashed #B9E3C6;background:#E7F6EC;border-radius:14px;padding:18px;margin-bottom:20px}
+.modal-preco s{color:#7C8796;font-size:16px}
+.modal-valor{font-size:clamp(38px,6vw,48px);font-weight:900;color:var(--verde-esc);line-height:1;margin:4px 0 6px}
+.modal-preco span{display:block;font-size:13.5px;color:var(--verde-esc);font-weight:700}
+.modal-caixa .btn{max-width:none;margin-top:0}
+.modal-nao{display:block;width:100%;margin-top:12px;background:none;border:1px solid var(--borda);border-radius:12px;padding:14px;font-family:inherit;font-size:13.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--cinza);cursor:pointer}
+.modal-nao:hover{background:#F3F6FA}
 .plano .btn{margin-top:20px;font-size:17.5px;padding:19px 20px}
 .ponte{text-align:center;font-weight:700;color:var(--navy3);margin-top:18px;font-size:15.5px}
 @media (min-width:820px){.ponte{display:none}}
@@ -258,6 +275,7 @@ footer a{color:#C9D5E4}
     <h1>{{hero.h1}}</h1>
     <p class="sub">{{hero.sub}}</p>
     <img class="hero-img" src="assets/hero.webp" width="1000" height="1000" alt="{{hero.imgAlt}}" fetchpriority="high">
+    <a class="btn" href="#oferta">{{hero.cta}}</a>
     <div class="texto">
       <p>{{hero.p1}}</p>
       <p>{{hero.p2}}</p>
@@ -265,8 +283,6 @@ footer a{color:#C9D5E4}
       <p>{{hero.p4}}</p>
     </div>
     <ul class="checks">{{#hero.lista}}<li>{{.}}</li>{{/hero.lista}}</ul>
-    <a class="btn" href="#oferta">{{hero.cta}}</a>
-    <p class="entrega">{{hero.entrega}}</p>
   </div>
 </header>
 
@@ -370,7 +386,7 @@ footer a{color:#C9D5E4}
           <p class="parc">ou {{config.precos.parcelasBasico}}</p>
           <p class="eco">{{oferta.economia}} <b>{{p.ecoBasico}}</b></p>
         </div>
-        <a class="btn" data-checkout data-plano="basico" data-valor="{{config.precos.basico}}" href="{{config.checkout.basico}}">{{oferta.basico.cta}}</a>
+        <a class="btn" id="btn-basico" data-checkout data-plano="basico" data-valor="{{config.precos.basico}}" href="{{config.checkout.basico}}">{{oferta.basico.cta}}</a>
         <p class="ponte">{{oferta.ponte}}</p>
       </div>
       <div class="plano completo">
@@ -397,6 +413,24 @@ footer a{color:#C9D5E4}
     <p class="seguro">{{oferta.seguro}}</p>
   </div>
 </section>
+
+<!-- POPUP DE UPSELL: abre quando a pessoa clica no Plano Básico. O botão tem link PRÓPRIO
+     (config.checkout.popup, Completo a {{p.popup}}), não é o link do Plano Completo. -->
+<div class="modal" id="upsell" hidden>
+  <div class="modal-fundo" data-fechar></div>
+  <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="upsell-titulo">
+    <button class="modal-x" data-fechar aria-label="Fechar">×</button>
+    <h3 id="upsell-titulo">{{popup.tit}}</h3>
+    <p class="modal-sub">{{popup.sub}}</p>
+    <div class="modal-preco">
+      <s>{{p.completo}}</s>
+      <div class="modal-valor">{{p.popup}}</div>
+      <span>{{popup.nota}}</span>
+    </div>
+    <a class="btn" id="upsell-sim" data-checkout data-plano="popup" data-valor="{{config.precos.popup}}" href="{{config.checkout.popup}}">{{popup.sim}}</a>
+    <button class="modal-nao" id="upsell-nao">{{popup.nao}}</button>
+  </div>
+</div>
 
 <!-- 10 · GARANTIA -->
 <section class="branco garantia">
@@ -483,11 +517,45 @@ footer a{color:#C9D5E4}
   document.querySelectorAll('a[data-checkout], a[href*="pay.wiapy.com"]').forEach(function (a) {
     var h = a.getAttribute('href') || '';
     if (q && /^https?:/.test(h)) a.href = h + (h.indexOf('?') >= 0 ? '&' : '?') + q;
+    if (a.id === 'btn-basico') return; // o Básico abre o popup antes (script abaixo)
     a.addEventListener('click', function () {
       window.__indoParaCheckout = true;
       try { fbq('track', 'InitiateCheckout', { value: Number(a.getAttribute('data-valor')) || 0, currency: 'BRL' }); } catch (e) {}
     });
   });
+
+  // botões âncora (href="#oferta" etc.): rola até a seção sem pôr nada na URL
+  document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var alvo = document.getElementById(a.getAttribute('href').slice(1));
+      if (!alvo) return;
+      e.preventDefault();
+      alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Popup de upsell: quem clica no Plano Básico vê o Completo a {{p.popup}} antes de seguir.
+  // Quem recusa vai para o checkout do Básico, como pediu.
+  var modal = document.getElementById('upsell'), basico = document.getElementById('btn-basico'), nao = document.getElementById('upsell-nao');
+  var sim = document.getElementById('upsell-sim');
+  // só liga o popup quando o checkout dele existir (config.checkout.popup com link https)
+  if (modal && basico && sim && /^https?:/.test(sim.getAttribute('href'))) {
+    var ultimoFoco = null;
+    var fechar = function () { modal.hidden = true; document.body.style.overflow = ''; if (ultimoFoco) ultimoFoco.focus(); };
+    basico.addEventListener('click', function (e) {
+      e.preventDefault();
+      ultimoFoco = document.activeElement;
+      modal.hidden = false; document.body.style.overflow = 'hidden';
+      document.getElementById('upsell-sim').focus();
+    });
+    modal.querySelectorAll('[data-fechar]').forEach(function (b) { b.addEventListener('click', fechar); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) fechar(); });
+    nao.addEventListener('click', function () {
+      window.__indoParaCheckout = true;
+      try { fbq('track', 'InitiateCheckout', { value: Number(basico.getAttribute('data-valor')) || 0, currency: 'BRL' }); } catch (e) {}
+      location.href = basico.href;
+    });
+  }
 })();
 </script>
 
@@ -496,6 +564,7 @@ footer a{color:#C9D5E4}
      Quem clica num botão de compra (data-checkout ou link pay.wiapy.com) não é desviado: ver o script acima. -->
 <script>
 (function () {
+  if (!/^https?:/.test('{{config.checkoutSaida}}')) return; // sem checkout da promo, não desvia
   var destino = location.origin + location.pathname.replace(/[^\/]*$/, '') + 'promo';
   var q = location.search.replace(/^\?/, '');
   if (q) destino += '?' + q;
