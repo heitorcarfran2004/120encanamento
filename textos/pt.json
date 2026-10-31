@@ -24,11 +24,10 @@
     "garantiaDias": 30,
     "checkout": {
       "basico": "https://pay.wiapy.com/YgwbY8V64Ly1",
-      "completo": "https://pay.wiapy.com/RPe4mLHhZQTY",
-      "popup": "TROCAR-CHECKOUT-POPUP"
+      "completo": "https://pay.wiapy.com/rK16EAFPIItC",
+      "popup": "https://pay.wiapy.com/lvSRzCsllM8"
     },
     "checkoutSaida": "https://pay.wiapy.com/rGZJgMY8Jzr",
-    "_popupPendente": "Link do popup (Completo R$ 24,90): https://pay.wiapy.com/TuMSH_1uXIM. Só colar em checkout.popup DEPOIS que o Heitor validar o e-mail do checkout Completo na Wiapy; antes disso o link dá Erro ao Carregar Checkout.",
     "_checkout": "TROCAR: quando o Cadastrador criar os checkouts na Wiapy (pay.wiapy.com/...), colar os 2 links aqui (um lugar só) e rodar node _montar.cjs. Todo botão de compra usa estes valores e tem o atributo data-checkout.",
     "backRedirect": true,
     "_backRedirect": "Desligado: a oferta de saída (promo, escada padrão R$ 8,90) ainda não tem checkout. Ligar só quando o Heitor decidir; aí criar _fonte/promo.html. O script já deixa passar quem vai para pay.wiapy.com.",
