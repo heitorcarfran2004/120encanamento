@@ -408,7 +408,7 @@ footer a{color:#C9D5E4}
         <div class="preco">
           <p class="de">de <s>R$ 47,90</s> por:</p>
           <p class="valor">R$ 17,90</p>
-          <p class="parc">ou 4x de R$ 4,48</p>
+          <p class="parc">ou 4x de R$ 5,03</p>
           <p class="eco">Você economiza <b>R$ 30,00</b></p>
         </div>
         <a class="btn" id="btn-basico" data-checkout data-plano="basico" data-valor="17.9" href="https://pay.wiapy.com/YgwbY8V64Ly1">QUERO O PLANO BÁSICO</a>
@@ -428,7 +428,7 @@ footer a{color:#C9D5E4}
         <div class="preco">
           <p class="de">de <s>R$ 147,90</s> por:</p>
           <p class="valor">R$ 37,00</p>
-          <p class="parc">ou 6x de R$ 6,32</p>
+          <p class="parc">ou 9x de R$ 5,36</p>
           <p class="eco">Você economiza <b>R$ 110,90</b></p>
         </div>
         <a class="btn" data-checkout data-plano="completo" data-valor="37" href="https://pay.wiapy.com/RPe4mLHhZQTY">QUERO O PLANO COMPLETO</a>
@@ -604,7 +604,7 @@ footer a{color:#C9D5E4}
      Quem clica num botão de compra (data-checkout ou link pay.wiapy.com) não é desviado: ver o script acima. -->
 <script>
 (function () {
-  if (!/^https?:/.test('TROCAR-CHECKOUT-SAIDA')) return; // sem checkout da promo, não desvia
+  if (!/^https?:/.test('https://pay.wiapy.com/rGZJgMY8Jzr')) return; // sem checkout da promo, não desvia
   var destino = location.origin + location.pathname.replace(/[^\/]*$/, '') + 'promo';
   var q = location.search.replace(/^\?/, '');
   if (q) destino += '?' + q;
