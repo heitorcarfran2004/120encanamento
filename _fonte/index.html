@@ -99,10 +99,15 @@ h2{font-size:clamp(27px,6.2vw,44px);font-weight:900;text-align:center}
 
 /* carrossel em faixa (marquee) */
 .faixa{width:100%;overflow:hidden;margin-top:34px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.trilho{display:flex;width:max-content;animation:anda 48s linear infinite}
+/* anda sozinho e também arrasta com o dedo ou o mouse (script "carrosséis" no fim da página).
+   Sem JavaScript, a animação em CSS continua valendo. */
+.trilho{display:flex;width:max-content;animation:anda 48s linear infinite;will-change:transform}
 .faixa:hover .trilho,.faixa.parado .trilho{animation-play-state:paused}
+.faixa.js .trilho{animation:none}
+.faixa.js{touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none}
+.faixa.js.arrastando{cursor:grabbing}
 .trilho figure{flex:0 0 auto;padding:0 10px;cursor:zoom-in}
-.trilho img{height:clamp(420px,60vw,560px);width:auto;border-radius:10px;box-shadow:0 18px 40px -18px rgba(0,0,0,.55)}
+.trilho img{height:clamp(420px,60vw,560px);width:auto;border-radius:10px;box-shadow:0 18px 40px -18px rgba(0,0,0,.55);-webkit-user-drag:none}
 @keyframes anda{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .dica{text-align:center;font-size:14px;color:var(--cinza);margin-top:10px}
 .escuro .dica{color:#9FB0C6}
@@ -325,7 +330,7 @@ footer a{color:#C9D5E4}
     <h2>{{urgencia.h2}}</h2>
     <a class="btn" href="#oferta">{{urgencia.cta}}</a>
   </div>
-  <div class="faixa" style="margin-top:40px"><div class="trilho" id="trilho2" style="animation-direction:reverse">
+  <div class="faixa" style="margin-top:40px"><div class="trilho" id="trilho2" data-sentido="direita" style="animation-direction:reverse">
     {{#urgencia.trilho2}}<figure><img src="{{img}}" width="600" height="800" alt="{{alt}}" loading="lazy" decoding="async" {{#ref}}data-placeholder="ref"{{/ref}}></figure>{{/urgencia.trilho2}}
     {{#urgencia.trilho2}}<figure aria-hidden="true"><img src="{{img}}" width="600" height="800" alt="" loading="lazy" decoding="async" {{#ref}}data-placeholder="ref"{{/ref}}></figure>{{/urgencia.trilho2}}
   </div></div>
@@ -482,10 +487,59 @@ footer a{color:#C9D5E4}
   });
   zoom.addEventListener('click', function () { zoom.hidden = true; zImg.src = ''; });
 
-  // no celular, tocar na faixa pausa o carrossel
+  // carrosséis: andam sozinhos (uma volta a cada 48 s, como a animação em CSS) e também passam com o
+  // dedo ou o mouse. Arrastar mais de 6 px não abre o zoom; soltar retoma o movimento depois de 1,5 s.
   document.querySelectorAll('.faixa').forEach(function (f) {
-    f.addEventListener('touchstart', function () { f.classList.add('parado'); }, { passive: true });
-    f.addEventListener('touchend', function () { setTimeout(function () { f.classList.remove('parado'); }, 2500); });
+    var t = f.querySelector('.trilho');
+    if (!t || !window.requestAnimationFrame) return;
+    f.classList.add('js');
+    var dir = t.getAttribute('data-sentido') === 'direita' ? 1 : -1;
+    var pos = 0, meio = 0, antes = 0, parado = false, pausaAte = 0;
+    var toque = null, arrastou = false;
+    function medir() { meio = t.scrollWidth / 2; }
+    function prender() { if (meio > 0) { pos = pos % meio; if (pos > 0) pos -= meio; } }
+    function quadro(agora) {
+      var dt = antes ? Math.min(agora - antes, 100) / 1000 : 0;
+      antes = agora;
+      if (!meio) medir();
+      if (!toque && !parado && agora > pausaAte && meio) pos += dir * (meio / 48) * dt;
+      prender();
+      t.style.transform = 'translateX(' + pos.toFixed(2) + 'px)';
+      requestAnimationFrame(quadro);
+    }
+    medir();
+    t.querySelectorAll('img').forEach(function (i) { i.setAttribute('draggable', 'false'); i.addEventListener('load', medir); });
+    window.addEventListener('resize', medir);
+    f.addEventListener('mouseenter', function () { parado = true; });
+    f.addEventListener('mouseleave', function () { parado = false; });
+    f.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      toque = { x: e.clientX, pos: pos, id: e.pointerId };
+      arrastou = false;
+    });
+    f.addEventListener('pointermove', function (e) {
+      if (!toque || e.pointerId !== toque.id) return;
+      var dx = e.clientX - toque.x;
+      if (!arrastou && Math.abs(dx) > 6) {
+        arrastou = true;
+        f.classList.add('arrastando');
+        try { f.setPointerCapture(e.pointerId); } catch (err) {}
+      }
+      if (arrastou) pos = toque.pos + dx;
+    });
+    function soltar(e) {
+      if (!toque || (e && e.pointerId !== toque.id)) return;
+      toque = null;
+      f.classList.remove('arrastando');
+      pausaAte = performance.now() + 1500;
+    }
+    f.addEventListener('pointerup', soltar);
+    f.addEventListener('pointercancel', soltar);
+    // depois de arrastar, o clique que o navegador solta não abre o zoom
+    f.addEventListener('click', function (e) {
+      if (arrastou) { e.stopPropagation(); e.preventDefault(); arrastou = false; }
+    }, true);
+    requestAnimationFrame(quadro);
   });
 
   // leva as UTMs da campanha até o checkout e marca o InitiateCheckout
