@@ -32,9 +32,8 @@ fbq('track', 'PageView');
 <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 
 <!-- ============================================================
-     CHECKOUTS (Wiapy), um por plano. Os links moram num lugar só: config.checkout no textos/pt.json
-       R$ 17,90   Plano Básico   (https://pay.wiapy.com/YgwbY8V64Ly1)
-       R$ 37,00   Plano Completo (https://pay.wiapy.com/rK16EAFPIItC)
+     CHECKOUT (Wiapy), plano único. O link mora num lugar só: config.checkout no textos/pt.json
+       R$ 17,90   HIDRODIAG Completo, 120 diagnósticos + 4 bônus (https://pay.wiapy.com/YgwbY8V64Ly1)
      Todo botão de compra tem o atributo data-checkout. Os outros botões (href="#oferta") só rolam até os planos.
      ============================================================ -->
 
@@ -206,6 +205,8 @@ h2{font-size:clamp(27px,6.2vw,44px);font-weight:900;text-align:center}
 .modal-nao{display:block;width:100%;margin-top:12px;background:none;border:1px solid var(--borda);border-radius:12px;padding:14px;font-family:inherit;font-size:13.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--cinza);cursor:pointer}
 .modal-nao:hover{background:#F3F6FA}
 .plano .btn{margin-top:20px;font-size:17.5px;padding:19px 20px}
+.planos-grade.unico{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
+.planos-grade.unico .plano.completo{margin-top:14px}
 .ponte{text-align:center;font-weight:700;color:var(--navy3);margin-top:18px;font-size:15.5px}
 @media (min-width:820px){.ponte{display:none}}
 .arg{display:flex;gap:14px;align-items:flex-start;max-width:620px;margin:34px auto 0;background:#E9F7EE;border:1px solid #BFE5CB;border-radius:14px;padding:16px 18px}
@@ -276,7 +277,7 @@ footer a{color:#C9D5E4}
     <span class="pill">+120 Diagnósticos de Hidráulica Residencial</span>
     <h1>120 diagnósticos prontos para achar a causa do problema hidráulico <span class="neon">antes de quebrar a parede</span> ou trocar qualquer peça</h1>
     <p class="sub">Prontos para abrir no celular ou imprimir e consultar durante o atendimento, com o problema na sua frente.</p>
-    <img class="hero-img" src="assets/hero.webp" width="1000" height="1000" alt="Caixa do HIDRODIAG, 120 diagnósticos de hidráulica residencial, com as fichas atrás e os 6 bônus na frente" fetchpriority="high">
+    <img class="hero-img" src="assets/hero.webp" width="1000" height="1000" alt="Caixa do HIDRODIAG, 120 diagnósticos de hidráulica residencial, com as fichas atrás e os 4 bônus na frente" fetchpriority="high">
     <a class="btn" href="#oferta">QUERO OS 120 DIAGNÓSTICOS</a>
     <div class="texto">
       <p>Você já sabe mexer com hidráulica. <b>O que trava é descobrir a causa.</b></p>
@@ -288,12 +289,11 @@ footer a{color:#C9D5E4}
   </div>
 </header>
 
-<!-- 2 · COMO SÃO OS DIAGNÓSTICOS (celular na mão + carrossel 1).
+<!-- 2 · COMO SÃO OS DIAGNÓSTICOS (carrossel 1).
      Fichas do nosso entregável (Downloads/Hidraulica Diagnosticos/Entregavel/paginas): as 12 dos criativos CRT 01-13. -->
 <section class="claro" id="fichas">
   <div class="wrap">
     <h2>VEJA COMO SÃO OS DIAGNÓSTICOS QUE VOCÊ VAI RECEBER</h2>
-    <img class="celular" src="assets/celular.webp" width="1122" height="1402" alt="Mão de encanador segurando o celular com um diagnóstico aberto, na frente de uma caixa acoplada aberta" loading="lazy">
   </div>
   <div class="faixa"><div class="trilho" id="trilho">
     <figure><img src="assets/fichas/a1.webp" width="600" height="800" alt="Diagnóstico 001: CONTA DE ÁGUA SUBIU E NÃO APARECE VAZAMENTO" loading="lazy" ></figure><figure><img src="assets/fichas/a2.webp" width="600" height="800" alt="Diagnóstico 002: MANCHA DE UMIDADE NA PAREDE PERTO DO BANHEIRO" loading="lazy" ></figure><figure><img src="assets/fichas/a3.webp" width="600" height="800" alt="Diagnóstico 005: PISO ÚMIDO OU PISO DE MADEIRA ESTUFANDO" loading="lazy" ></figure><figure><img src="assets/fichas/a4.webp" width="600" height="800" alt="Diagnóstico 026: RALO COM MAU CHEIRO SEM ESTAR ENTUPIDO" loading="lazy" ></figure><figure><img src="assets/fichas/a5.webp" width="600" height="800" alt="Diagnóstico 027: PIA DA COZINHA ESCOANDO DEVAGAR" loading="lazy" ></figure><figure><img src="assets/fichas/a6.webp" width="600" height="800" alt="Diagnóstico 047: TORNEIRA DA COZINHA COM POUCA ÁGUA E O RESTO NORMAL" loading="lazy" ></figure>
@@ -309,20 +309,21 @@ footer a{color:#C9D5E4}
     <div class="grade g2" style="max-width:860px;margin-left:auto;margin-right:auto">
       <div class="card"><div class="ico"><svg><use href="#i-sintoma"/></svg></div><span>Um problema inteiro em uma página só: sintoma, causas mais prováveis, verificações na ordem e próximo passo.</span></div><div class="card"><div class="ico"><svg><use href="#i-ordem"/></svg></div><span>Organização por sintoma e por tipo de problema, com índice para achar o diagnóstico em poucos toques.</span></div><div class="card"><div class="ico"><svg><use href="#i-visual"/></svg></div><span>Versão digital para o celular e versão A4 para imprimir e deixar na caixa de ferramentas.</span></div><div class="card"><div class="ico"><svg><use href="#i-baixar"/></svg></div><span>Download imediato, sem mensalidade e com acesso vitalício.</span></div>
     </div>
+    <img class="celular" src="assets/celular.webp" width="1122" height="1402" alt="Mão de encanador segurando o celular com um diagnóstico aberto, na frente de uma caixa acoplada aberta" loading="lazy">
   </div>
 </section>
 
-<!-- 4 · URGÊNCIA (carrossel 2) -->
+<!-- 4 · URGÊNCIA (carrossel 2 abaixo do botão) -->
 <section class="escuro">
-  <div class="faixa" style="margin-top:0"><div class="trilho" id="trilho2" style="animation-direction:reverse">
-    <figure><img src="assets/fichas/b1.webp" width="600" height="800" alt="Diagnóstico 049: REGISTRO VAZANDO PELO VOLANTE QUANDO ABRE" loading="lazy" ></figure><figure><img src="assets/fichas/b2.webp" width="600" height="800" alt="Diagnóstico 063: VÁLVULA DE DESCARGA DISPARADA, JORRANDO SEM PARAR" loading="lazy" ></figure><figure><img src="assets/fichas/b3.webp" width="600" height="800" alt="Diagnóstico 076: CHUVEIRO FRACO E O RESTO DA CASA NORMAL" loading="lazy" ></figure><figure><img src="assets/fichas/b4.webp" width="600" height="800" alt="Diagnóstico 091: CAIXA-D'ÁGUA TRANSBORDANDO PELO LADRÃO" loading="lazy" ></figure><figure><img src="assets/fichas/b5.webp" width="600" height="800" alt="Diagnóstico 104: PRESSURIZADOR LIGA SOZINHO COM A CASA PARADA" loading="lazy" ></figure><figure><img src="assets/fichas/b6.webp" width="600" height="800" alt="Diagnóstico 113: BARULHO DE ÁGUA CORRENDO NA PAREDE COM TUDO FECHADO" loading="lazy" ></figure>
-    <figure aria-hidden="true"><img src="assets/fichas/b1.webp" width="600" height="800" alt="" loading="lazy" ></figure><figure aria-hidden="true"><img src="assets/fichas/b2.webp" width="600" height="800" alt="" loading="lazy" ></figure><figure aria-hidden="true"><img src="assets/fichas/b3.webp" width="600" height="800" alt="" loading="lazy" ></figure><figure aria-hidden="true"><img src="assets/fichas/b4.webp" width="600" height="800" alt="" loading="lazy" ></figure><figure aria-hidden="true"><img src="assets/fichas/b5.webp" width="600" height="800" alt="" loading="lazy" ></figure><figure aria-hidden="true"><img src="assets/fichas/b6.webp" width="600" height="800" alt="" loading="lazy" ></figure>
-  </div></div>
-  <div class="wrap centro estreito" style="margin-top:40px">
+  <div class="wrap centro estreito">
     <span class="kicker">Aproveite a oferta por tempo limitado</span>
     <h2>Quantas paredes você ainda vai abrir antes de ter certeza de onde estava o vazamento?</h2>
     <a class="btn" href="#oferta">QUERO ACESSAR AGORA</a>
   </div>
+  <div class="faixa" style="margin-top:40px"><div class="trilho" id="trilho2" style="animation-direction:reverse">
+    <figure><img src="assets/fichas/b1.webp" width="600" height="800" alt="Diagnóstico 049: REGISTRO VAZANDO PELO VOLANTE QUANDO ABRE" loading="lazy" ></figure><figure><img src="assets/fichas/b2.webp" width="600" height="800" alt="Diagnóstico 063: VÁLVULA DE DESCARGA DISPARADA, JORRANDO SEM PARAR" loading="lazy" ></figure><figure><img src="assets/fichas/b3.webp" width="600" height="800" alt="Diagnóstico 076: CHUVEIRO FRACO E O RESTO DA CASA NORMAL" loading="lazy" ></figure><figure><img src="assets/fichas/b4.webp" width="600" height="800" alt="Diagnóstico 091: CAIXA-D'ÁGUA TRANSBORDANDO PELO LADRÃO" loading="lazy" ></figure><figure><img src="assets/fichas/b5.webp" width="600" height="800" alt="Diagnóstico 104: PRESSURIZADOR LIGA SOZINHO COM A CASA PARADA" loading="lazy" ></figure><figure><img src="assets/fichas/b6.webp" width="600" height="800" alt="Diagnóstico 113: BARULHO DE ÁGUA CORRENDO NA PAREDE COM TUDO FECHADO" loading="lazy" ></figure>
+    <figure aria-hidden="true"><img src="assets/fichas/b1.webp" width="600" height="800" alt="" loading="lazy" ></figure><figure aria-hidden="true"><img src="assets/fichas/b2.webp" width="600" height="800" alt="" loading="lazy" ></figure><figure aria-hidden="true"><img src="assets/fichas/b3.webp" width="600" height="800" alt="" loading="lazy" ></figure><figure aria-hidden="true"><img src="assets/fichas/b4.webp" width="600" height="800" alt="" loading="lazy" ></figure><figure aria-hidden="true"><img src="assets/fichas/b5.webp" width="600" height="800" alt="" loading="lazy" ></figure><figure aria-hidden="true"><img src="assets/fichas/b6.webp" width="600" height="800" alt="" loading="lazy" ></figure>
+  </div></div>
 </section>
 
 <!-- 5 · PARA QUEM É -->
@@ -343,7 +344,7 @@ footer a{color:#C9D5E4}
       <span class="pill">⚡ ACESSO IMEDIATO</span>
       <h3 class="grande">TUDO FOI ORGANIZADO PARA SER CONSULTADO NO MEIO DO ATENDIMENTO.</h3>
       <p class="lead">Você abre o índice, acha o sintoma que está na sua frente e usa o diagnóstico com o problema ali, do seu lado.</p>
-      <img class="pacote-img" src="assets/hero.webp" width="1000" height="1000" alt="Pacote completo do HIDRODIAG: a caixa com os 120 diagnósticos e os 6 bônus" loading="lazy">
+      <img class="pacote-img" src="assets/hero.webp" width="1000" height="1000" alt="Pacote completo do HIDRODIAG: a caixa com os 120 diagnósticos e os 4 bônus" loading="lazy">
       <ul class="lista-rec">
         <li class="forte">120 diagnósticos de problemas de hidráulica residencial</li>
         <li><b>Bloco 1, vazamentos e infiltrações (25):</b> conta de água que subiu sem vazamento aparente, mancha na parede e no teto, piso estufando, cavalete e hidrômetro, infiltração de chuva e a mancha que volta depois do conserto</li><li><b>Bloco 2, entupimentos e esgoto (20):</b> pia e ralo escoando devagar, vaso entupido, caixa de gordura e de inspeção, esgoto voltando pelo ralo, mau cheiro e fossa</li><li><b>Bloco 3, torneiras e registros (15):</b> torneira pingando, registro que não fecha ou vaza pelo volante, monocomando, engate flexível e torneira elétrica</li><li><b>Bloco 4, vasos sanitários e descargas (15):</b> caixa acoplada enchendo sem parar, válvula de descarga disparada, descarga fraca, água no pé do vaso e ducha higiênica</li><li><b>Bloco 5, chuveiros, pressão e vazão (15):</b> chuveiro fraco, pouca pressão na casa inteira, chuveiro elétrico que não esquenta ou dá choque, aquecedor a gás e solar</li><li><b>Bloco 6, caixas-d'água e boias (10):</b> caixa transbordando pelo ladrão, caixa que não enche, vazamento no fundo, boia batendo, boia elétrica e cisterna</li><li><b>Bloco 7, bombas e pressurizadores (10):</b> bomba que não liga ou não puxa água, que liga e desliga sozinha, pressurizador ligando com a casa parada, barulho e bomba de poço</li><li><b>Bloco 8, outros problemas hidráulicos (10):</b> batida e assovio no cano, barulho de água na parede com tudo fechado, água amarelada ou leitosa e máquina de lavar que enche devagar</li>
@@ -354,41 +355,31 @@ footer a{color:#C9D5E4}
   </div>
 </section>
 
-<!-- 7 · BÔNUS (os 6 entram só no Plano Completo) -->
+<!-- 7 · BÔNUS (os 4 que estão no app de membros) -->
 <section class="claro bonus">
   <div class="wrap">
     <h2>E NÃO PARA POR AÍ… TEM MAIS!</h2>
-    <p class="sub">No Plano Completo você também vai receber…</p>
-    <span class="pill">🎁 6 BÔNUS EXCLUSIVOS</span>
+    <p class="sub">Junto com os 120 diagnósticos, você também recebe…</p>
+    <span class="pill">🎁 4 BÔNUS EXCLUSIVOS</span>
     <div class="grade">
       <div class="bon">
-        <img src="assets/bonus-1.webp" width="600" height="600" alt="+40 Diagnósticos Extras de Problemas Menos Frequentes" loading="lazy">
-        <span class="tag">BÔNUS #1</span>
-        <div class="in"><h3>+40 Diagnósticos Extras de Problemas Menos Frequentes</h3><p>Mais 40 diagnósticos daqueles casos que aparecem de vez em quando e que, justamente por isso, você não tem na ponta da língua. Mesma estrutura: sintoma, causas prováveis, verificações e próximo passo.</p>
-          <p class="val"><span>Valor: <s>R$ 27</s> <b>GRÁTIS</b></span></p></div>
-      </div><div class="bon">
-        <img src="assets/bonus-2.webp" width="600" height="600" alt="+30 Diagnósticos de Erros de Instalação Hidráulica" loading="lazy">
-        <span class="tag">BÔNUS #2</span>
-        <div class="in"><h3>+30 Diagnósticos de Erros de Instalação Hidráulica</h3><p>30 diagnósticos para perceber quando o problema não é da peça, e sim de como a instalação foi feita: caimento do esgoto, falta de ventilação, conexão mal colada, vedação errada. Serve para separar o que é manutenção do que é serviço mal feito.</p>
-          <p class="val"><span>Valor: <s>R$ 27</s> <b>GRÁTIS</b></span></p></div>
-      </div><div class="bon">
         <img src="assets/bonus-3.webp" width="600" height="600" alt="Guia Rápido de Ferramentas para Diagnóstico" loading="lazy">
-        <span class="tag">BÔNUS #3</span>
+        <span class="tag">BÔNUS #1</span>
         <div class="in"><h3>Guia Rápido de Ferramentas para Diagnóstico</h3><p>Qual ferramenta usar em cada verificação (haste e sonda de desentupimento, manômetro, geofone, câmera de inspeção), o que dá para confirmar com o que você já tem na caixa e em que caso o instrumento faz falta de verdade.</p>
           <p class="val"><span>Valor: <s>R$ 27</s> <b>GRÁTIS</b></span></p></div>
       </div><div class="bon">
         <img src="assets/bonus-4.webp" width="600" height="600" alt="Tabela de Bitolas, Conexões e Pressões" loading="lazy">
-        <span class="tag">BÔNUS #4</span>
+        <span class="tag">BÔNUS #2</span>
         <div class="in"><h3>Tabela de Bitolas, Conexões e Pressões</h3><p>Medida do tubo em milímetro e em polegada, as conexões mais usadas e as faixas de pressão de referência, numa tabela pronta para abrir no celular durante o serviço.</p>
           <p class="val"><span>Valor: <s>R$ 27</s> <b>GRÁTIS</b></span></p></div>
       </div><div class="bon">
         <img src="assets/bonus-5.webp" width="600" height="600" alt="Checklist Antes de Quebrar a Parede" loading="lazy">
-        <span class="tag">BÔNUS #5</span>
+        <span class="tag">BÔNUS #3</span>
         <div class="in"><h3>Checklist Antes de Quebrar a Parede</h3><p>Uma lista objetiva para rodar antes de abrir parede ou piso. Se algum item não foi verificado, você ainda não sabe onde está o vazamento.</p>
           <p class="val"><span>Valor: <s>R$ 27</s> <b>GRÁTIS</b></span></p></div>
       </div><div class="bon">
         <img src="assets/bonus-6.webp" width="600" height="600" alt="Guia dos Erros de Diagnóstico Mais Comuns e Como Evitá-los" loading="lazy">
-        <span class="tag">BÔNUS #6</span>
+        <span class="tag">BÔNUS #4</span>
         <div class="in"><h3>Guia dos Erros de Diagnóstico Mais Comuns e Como Evitá-los</h3><p>Os enganos que mais fazem encanador quebrar no lugar errado ou trocar peça boa: sintoma parecido, conclusão apressada, teste feito na ordem errada. Cada erro com o que fazer para não cair nele.</p>
           <p class="val"><span>Valor: <s>R$ 27</s> <b>GRÁTIS</b></span></p></div>
       </div>
@@ -396,68 +387,36 @@ footer a{color:#C9D5E4}
   </div>
 </section>
 
-<!-- 8 · PLANOS (Básico e Completo) -->
+<!-- 8 · OFERTA (plano único de R$ 17,90: 120 diagnósticos + 4 bônus, link config.checkout.basico) -->
 <section class="planos" id="oferta">
   <div class="wrap">
     <span class="faixa-chance">🔥 ÚLTIMA CHANCE: OFERTA TERMINA HOJE</span>
-    <h2>ESCOLHA A MELHOR OPÇÃO PARA VOCÊ</h2>
-    <div class="planos-grade">
-      <div class="plano basico">
-        <h3>PLANO BÁSICO</h3>
-        <img class="img" src="assets/basico.webp" width="1000" height="1000" alt="Caixa do HIDRODIAG com os 120 diagnósticos" loading="lazy">
-        <p class="rot">Você recebe:</p>
-        <ul class="lista"><li>120 Diagnósticos de Hidráulica Residencial</li><li>Sintoma, causas prováveis, verificações e próximo passo em cada página</li><li>Índice por sintoma e guia inicial de utilização</li><li>Versão digital e imprimível</li><li>Acesso imediato e vitalício</li></ul>
-        <div class="preco">
-          <p class="de">de <s>R$ 47,90</s> por:</p>
-          <p class="valor">R$ 17,90</p>
-          <p class="parc">ou 4x de R$ 5,03</p>
-          <p class="eco">Você economiza <b>R$ 30,00</b></p>
-        </div>
-        <a class="btn" id="btn-basico" data-checkout data-plano="basico" data-valor="17.9" href="https://pay.wiapy.com/YgwbY8V64Ly1">QUERO O PLANO BÁSICO</a>
-        <p class="ponte">Veja o que entra a mais no Plano Completo 👇</p>
-      </div>
+    <h2>GARANTA O SEU HIDRODIAG HOJE</h2>
+    <div class="planos-grade unico">
       <div class="plano completo">
-        <span class="selo-top">⚡ MAIS VENDIDO</span>
+        <span class="selo-top">🔥 OFERTA DE HOJE</span>
         <span class="chance">🔥 ÚLTIMA CHANCE: OFERTA TERMINA HOJE</span>
-        <h3>PLANO COMPLETO</h3>
-        <img class="img" src="assets/hero.webp" width="1000" height="1000" alt="Pacote completo do HIDRODIAG com os 6 bônus" loading="lazy">
-        <span class="tag">⚡ 120 diagnósticos + 6 bônus</span>
+        <h3>HIDRODIAG COMPLETO</h3>
+        <img class="img" src="assets/hero.webp" width="1000" height="1000" alt="Pacote completo do HIDRODIAG com os 4 bônus" loading="lazy">
+        <span class="tag">⚡ 120 diagnósticos + 4 bônus</span>
         <ul class="lista">
-          <li>120 Diagnósticos de Hidráulica Residencial</li><li>Sintoma, causas prováveis, verificações e próximo passo em cada página</li><li>Índice por sintoma e guia inicial de utilização</li><li>Versão digital e imprimível</li>
-          <li>🎁 Bônus #1 +40 Diagnósticos Extras de Problemas Menos Frequentes</li><li>🎁 Bônus #2 +30 Diagnósticos de Erros de Instalação</li><li>🎁 Bônus #3 Guia Rápido de Ferramentas para Diagnóstico</li><li>🎁 Bônus #4 Tabela de Bitolas, Conexões e Pressões</li><li>🎁 Bônus #5 Checklist Antes de Quebrar a Parede</li><li>🎁 Bônus #6 Guia dos Erros de Diagnóstico Mais Comuns</li>
+          <li>120 Diagnósticos de Hidráulica Residencial</li><li>Sintoma, causas prováveis, verificações e próximo passo em cada página</li><li>Índice por sintoma e guia inicial de utilização</li><li>Versão digital e imprimível</li><li>App no celular com busca por sintoma</li>
+          <li>🎁 Bônus #1 Guia Rápido de Ferramentas para Diagnóstico</li><li>🎁 Bônus #2 Tabela de Bitolas, Conexões e Pressões</li><li>🎁 Bônus #3 Checklist Antes de Quebrar a Parede</li><li>🎁 Bônus #4 Guia dos Erros de Diagnóstico Mais Comuns</li>
           <li>Atualizações futuras da biblioteca</li><li><b>Acesso vitalício a todo o material</b></li>
         </ul>
         <div class="preco">
           <p class="de">de <s>R$ 147,90</s> por:</p>
-          <p class="valor">R$ 37,00</p>
-          <p class="parc">ou 9x de R$ 5,36</p>
-          <p class="eco">Você economiza <b>R$ 110,90</b></p>
+          <p class="valor">R$ 17,90</p>
+          <p class="parc">ou 4x de R$ 5,03</p>
+          <p class="eco">Você economiza <b>R$ 130,00</b></p>
         </div>
-        <a class="btn" data-checkout data-plano="completo" data-valor="37" href="https://pay.wiapy.com/rK16EAFPIItC">QUERO O PLANO COMPLETO</a>
+        <a class="btn" data-checkout data-plano="basico" data-valor="17.9" href="https://pay.wiapy.com/YgwbY8V64Ly1">QUERO O HIDRODIAG AGORA</a>
       </div>
     </div>
-    <div class="arg"><i>✓</i><div><b>UMA ÚNICA PAREDE QUEBRADA NO LUGAR ERRADO CUSTA MAIS QUE O PLANO COMPLETO.</b><span>Os diagnósticos ficam com você para todos os atendimentos que vierem.</span></div></div>
+    <div class="arg"><i>✓</i><div><b>UMA ÚNICA PAREDE QUEBRADA NO LUGAR ERRADO CUSTA MAIS QUE O HIDRODIAG INTEIRO.</b><span>Os diagnósticos ficam com você para todos os atendimentos que vierem.</span></div></div>
     <p class="seguro">🔒 Compra 100% segura e garantida.</p>
   </div>
 </section>
-
-<!-- POPUP DE UPSELL: abre quando a pessoa clica no Plano Básico. O botão tem link PRÓPRIO
-     (config.checkout.popup, Completo a R$ 24,90), não é o link do Plano Completo. -->
-<div class="modal" id="upsell" hidden>
-  <div class="modal-fundo" data-fechar></div>
-  <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="upsell-titulo">
-    <button class="modal-x" data-fechar aria-label="Fechar">×</button>
-    <h3 id="upsell-titulo">Espera, só nesta tela 🔧</h3>
-    <p class="modal-sub">Leve o <b>Plano Completo</b>, com os 120 diagnósticos e os 6 bônus, por um valor que não aparece em nenhum outro lugar do site.</p>
-    <div class="modal-preco">
-      <s>R$ 37,00</s>
-      <div class="modal-valor">R$ 24,90</div>
-      <span>só R$ 7,00 a mais que o básico</span>
-    </div>
-    <a class="btn" id="upsell-sim" data-checkout data-plano="popup" data-valor="24.9" href="https://pay.wiapy.com/lvSRzCsllM8">QUERO O PLANO COMPLETO</a>
-    <button class="modal-nao" id="upsell-nao">Continuar só com o básico</button>
-  </div>
-</div>
 
 <!-- 10 · GARANTIA -->
 <section class="branco garantia">
@@ -493,7 +452,7 @@ footer a{color:#C9D5E4}
       </div><div class="card passo">
         <div class="ico"><svg><use href="#i-email"/></svg></div>
         <span class="n">PASSO 2</span>
-        <h3>Abra o seu e-mail</h3><p>Na mesma hora chega um e-mail com o acesso aos diagnósticos e aos bônus do seu plano.</p>
+        <h3>Abra o seu e-mail</h3><p>Na mesma hora chega um e-mail com o acesso aos diagnósticos e aos bônus.</p>
         <ul><li>Chega na hora</li><li>Organizado por sintoma</li><li>Download rápido dos PDFs</li></ul>
       </div><div class="card passo">
         <div class="ico"><svg><use href="#i-baixar"/></svg></div>

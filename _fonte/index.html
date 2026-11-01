@@ -32,9 +32,8 @@ fbq('track', 'PageView');
 <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 
 <!-- ============================================================
-     CHECKOUTS (Wiapy), um por plano. Os links moram num lugar só: config.checkout no textos/pt.json
-       {{p.basico}}   Plano Básico   ({{config.checkout.basico}})
-       {{p.completo}}   Plano Completo ({{config.checkout.completo}})
+     CHECKOUT (Wiapy), plano único. O link mora num lugar só: config.checkout no textos/pt.json
+       {{p.basico}}   HIDRODIAG Completo, 120 diagnósticos + 4 bônus ({{config.checkout.basico}})
      Todo botão de compra tem o atributo data-checkout. Os outros botões (href="#oferta") só rolam até os planos.
      ============================================================ -->
 
@@ -206,6 +205,8 @@ h2{font-size:clamp(27px,6.2vw,44px);font-weight:900;text-align:center}
 .modal-nao{display:block;width:100%;margin-top:12px;background:none;border:1px solid var(--borda);border-radius:12px;padding:14px;font-family:inherit;font-size:13.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--cinza);cursor:pointer}
 .modal-nao:hover{background:#F3F6FA}
 .plano .btn{margin-top:20px;font-size:17.5px;padding:19px 20px}
+.planos-grade.unico{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
+.planos-grade.unico .plano.completo{margin-top:14px}
 .ponte{text-align:center;font-weight:700;color:var(--navy3);margin-top:18px;font-size:15.5px}
 @media (min-width:820px){.ponte{display:none}}
 .arg{display:flex;gap:14px;align-items:flex-start;max-width:620px;margin:34px auto 0;background:#E9F7EE;border:1px solid #BFE5CB;border-radius:14px;padding:16px 18px}
@@ -288,12 +289,11 @@ footer a{color:#C9D5E4}
   </div>
 </header>
 
-<!-- 2 · COMO SÃO OS DIAGNÓSTICOS (celular na mão + carrossel 1).
+<!-- 2 · COMO SÃO OS DIAGNÓSTICOS (carrossel 1).
      {{fichas._fichas}} -->
 <section class="claro" id="fichas">
   <div class="wrap">
     <h2>{{fichas.h2}}</h2>
-    <img class="celular" src="assets/celular.webp" width="1122" height="1402" alt="{{fichas.celularAlt}}" loading="lazy">
   </div>
   <div class="faixa"><div class="trilho" id="trilho">
     {{#fichas.trilho1}}<figure><img src="{{img}}" width="600" height="800" alt="{{alt}}" loading="lazy" {{#ref}}data-placeholder="ref"{{/ref}}></figure>{{/fichas.trilho1}}
@@ -309,20 +309,21 @@ footer a{color:#C9D5E4}
     <div class="grade g2" style="max-width:860px;margin-left:auto;margin-right:auto">
       {{#possui.itens}}<div class="card"><div class="ico"><svg><use href="#i-{{icone}}"/></svg></div><span>{{txt}}</span></div>{{/possui.itens}}
     </div>
+    <img class="celular" src="assets/celular.webp" width="1122" height="1402" alt="{{fichas.celularAlt}}" loading="lazy">
   </div>
 </section>
 
-<!-- 4 · URGÊNCIA (carrossel 2) -->
+<!-- 4 · URGÊNCIA (carrossel 2 abaixo do botão) -->
 <section class="escuro">
-  <div class="faixa" style="margin-top:0"><div class="trilho" id="trilho2" style="animation-direction:reverse">
-    {{#urgencia.trilho2}}<figure><img src="{{img}}" width="600" height="800" alt="{{alt}}" loading="lazy" {{#ref}}data-placeholder="ref"{{/ref}}></figure>{{/urgencia.trilho2}}
-    {{#urgencia.trilho2}}<figure aria-hidden="true"><img src="{{img}}" width="600" height="800" alt="" loading="lazy" {{#ref}}data-placeholder="ref"{{/ref}}></figure>{{/urgencia.trilho2}}
-  </div></div>
-  <div class="wrap centro estreito" style="margin-top:40px">
+  <div class="wrap centro estreito">
     <span class="kicker">{{urgencia.kicker}}</span>
     <h2>{{urgencia.h2}}</h2>
     <a class="btn" href="#oferta">{{urgencia.cta}}</a>
   </div>
+  <div class="faixa" style="margin-top:40px"><div class="trilho" id="trilho2" style="animation-direction:reverse">
+    {{#urgencia.trilho2}}<figure><img src="{{img}}" width="600" height="800" alt="{{alt}}" loading="lazy" {{#ref}}data-placeholder="ref"{{/ref}}></figure>{{/urgencia.trilho2}}
+    {{#urgencia.trilho2}}<figure aria-hidden="true"><img src="{{img}}" width="600" height="800" alt="" loading="lazy" {{#ref}}data-placeholder="ref"{{/ref}}></figure>{{/urgencia.trilho2}}
+  </div></div>
 </section>
 
 <!-- 5 · PARA QUEM É -->
@@ -354,7 +355,7 @@ footer a{color:#C9D5E4}
   </div>
 </section>
 
-<!-- 7 · BÔNUS (os 6 entram só no Plano Completo) -->
+<!-- 7 · BÔNUS (os 4 que estão no app de membros) -->
 <section class="claro bonus">
   <div class="wrap">
     <h2>{{bonus.h2}}</h2>
@@ -371,26 +372,12 @@ footer a{color:#C9D5E4}
   </div>
 </section>
 
-<!-- 8 · PLANOS (Básico e Completo) -->
+<!-- 8 · OFERTA (plano único de {{p.basico}}: 120 diagnósticos + 4 bônus, link config.checkout.basico) -->
 <section class="planos" id="oferta">
   <div class="wrap">
     <span class="faixa-chance">{{oferta.faixa}}</span>
     <h2>{{oferta.h2}}</h2>
-    <div class="planos-grade">
-      <div class="plano basico">
-        <h3>{{oferta.basico.tit}}</h3>
-        <img class="img" src="assets/basico.webp" width="1000" height="1000" alt="{{oferta.basico.imgAlt}}" loading="lazy">
-        <p class="rot">{{oferta.basico.recebe}}</p>
-        <ul class="lista">{{#oferta.basico.itens}}<li>{{.}}</li>{{/oferta.basico.itens}}</ul>
-        <div class="preco">
-          <p class="de">{{oferta.de}} <s>{{p.deBasico}}</s> {{oferta.por}}</p>
-          <p class="valor">{{p.basico}}</p>
-          <p class="parc">ou {{config.precos.parcelasBasico}}</p>
-          <p class="eco">{{oferta.economia}} <b>{{p.ecoBasico}}</b></p>
-        </div>
-        <a class="btn" id="btn-basico" data-checkout data-plano="basico" data-valor="{{config.precos.basico}}" href="{{config.checkout.basico}}">{{oferta.basico.cta}}</a>
-        <p class="ponte">{{oferta.ponte}}</p>
-      </div>
+    <div class="planos-grade unico">
       <div class="plano completo">
         <span class="selo-top">{{oferta.completo.selo}}</span>
         <span class="chance">{{oferta.faixa}}</span>
@@ -403,36 +390,18 @@ footer a{color:#C9D5E4}
           {{#oferta.completo.extras}}<li>{{.}}</li>{{/oferta.completo.extras}}
         </ul>
         <div class="preco">
-          <p class="de">{{oferta.de}} <s>{{p.deCompleto}}</s> {{oferta.por}}</p>
-          <p class="valor">{{p.completo}}</p>
-          <p class="parc">ou {{config.precos.parcelasCompleto}}</p>
-          <p class="eco">{{oferta.economia}} <b>{{p.ecoCompleto}}</b></p>
+          <p class="de">{{oferta.de}} <s>{{p.deBasico}}</s> {{oferta.por}}</p>
+          <p class="valor">{{p.basico}}</p>
+          <p class="parc">ou {{config.precos.parcelasBasico}}</p>
+          <p class="eco">{{oferta.economia}} <b>{{p.ecoBasico}}</b></p>
         </div>
-        <a class="btn" data-checkout data-plano="completo" data-valor="{{config.precos.completo}}" href="{{config.checkout.completo}}">{{oferta.completo.cta}}</a>
+        <a class="btn" data-checkout data-plano="basico" data-valor="{{config.precos.basico}}" href="{{config.checkout.basico}}">{{oferta.completo.cta}}</a>
       </div>
     </div>
     <div class="arg"><i>✓</i><div><b>{{oferta.argumento}}</b><span>{{oferta.argumento2}}</span></div></div>
     <p class="seguro">{{oferta.seguro}}</p>
   </div>
 </section>
-
-<!-- POPUP DE UPSELL: abre quando a pessoa clica no Plano Básico. O botão tem link PRÓPRIO
-     (config.checkout.popup, Completo a {{p.popup}}), não é o link do Plano Completo. -->
-<div class="modal" id="upsell" hidden>
-  <div class="modal-fundo" data-fechar></div>
-  <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="upsell-titulo">
-    <button class="modal-x" data-fechar aria-label="Fechar">×</button>
-    <h3 id="upsell-titulo">{{popup.tit}}</h3>
-    <p class="modal-sub">{{popup.sub}}</p>
-    <div class="modal-preco">
-      <s>{{p.completo}}</s>
-      <div class="modal-valor">{{p.popup}}</div>
-      <span>{{popup.nota}}</span>
-    </div>
-    <a class="btn" id="upsell-sim" data-checkout data-plano="popup" data-valor="{{config.precos.popup}}" href="{{config.checkout.popup}}">{{popup.sim}}</a>
-    <button class="modal-nao" id="upsell-nao">{{popup.nao}}</button>
-  </div>
-</div>
 
 <!-- 10 · GARANTIA -->
 <section class="branco garantia">

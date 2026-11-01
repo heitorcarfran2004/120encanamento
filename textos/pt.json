@@ -13,7 +13,7 @@
     "precos": {
       "_nota": "Preços e âncoras dados pelo Heitor (26/10/2026), iguais aos da página do Split. Parcelas como ele passou; conferir com o que a Wiapy mostrar no checkout.",
       "basico": 17.9,
-      "deBasico": 47.9,
+      "deBasico": 147.9,
       "parcelasBasico": "4x de R$ 5,03",
       "completo": 37,
       "deCompleto": 147.9,
@@ -25,7 +25,7 @@
     "checkout": {
       "basico": "https://pay.wiapy.com/YgwbY8V64Ly1",
       "completo": "https://pay.wiapy.com/rK16EAFPIItC",
-      "popup": "https://pay.wiapy.com/lvSRzCsllM8"
+      "popup": ""
     },
     "checkoutSaida": "https://pay.wiapy.com/rGZJgMY8Jzr",
     "_checkout": "TROCAR: quando o Cadastrador criar os checkouts na Wiapy (pay.wiapy.com/...), colar os 2 links aqui (um lugar só) e rodar node _montar.cjs. Todo botão de compra usa estes valores e tem o atributo data-checkout.",
@@ -58,7 +58,7 @@
   },
   "popup": {
     "tit": "Espera, só nesta tela 🔧",
-    "sub": "Leve o <b>Plano Completo</b>, com os 120 diagnósticos e os 6 bônus, por um valor que não aparece em nenhum outro lugar do site.",
+    "sub": "Leve o <b>Plano Completo</b>, com os 120 diagnósticos e os 4 bônus, por um valor que não aparece em nenhum outro lugar do site.",
     "nota": "só {{p.difPopup}} a mais que o básico",
     "sim": "QUERO O PLANO COMPLETO",
     "nao": "Continuar só com o básico"
@@ -68,7 +68,7 @@
     "pill": "+120 Diagnósticos de Hidráulica Residencial",
     "h1": "120 diagnósticos prontos para achar a causa do problema hidráulico <span class=\"neon\">antes de quebrar a parede</span> ou trocar qualquer peça",
     "sub": "Prontos para abrir no celular ou imprimir e consultar durante o atendimento, com o problema na sua frente.",
-    "imgAlt": "Caixa do HIDRODIAG, 120 diagnósticos de hidráulica residencial, com as fichas atrás e os 6 bônus na frente",
+    "imgAlt": "Caixa do HIDRODIAG, 120 diagnósticos de hidráulica residencial, com as fichas atrás e os 4 bônus na frente",
     "p1": "Você já sabe mexer com hidráulica. <b>O que trava é descobrir a causa.</b>",
     "p2": "O cliente mostra a mancha na parede, a descarga que não para, o chuveiro fraco. Você fecha registro, olha o hidrômetro, testa daqui e dali, e mesmo assim fica na dúvida: é o flexível, é a vedação, é uma conexão dentro da parede ou é a pressão que chega na casa? Aí você para o serviço para procurar vídeo, manda mensagem no grupo, decide no chute. E às vezes o azulejo é quebrado no lugar errado.",
     "p3": "Com o <b>HIDRODIAG</b> o cliente mostra o problema, você abre o diagnóstico e já sabe por onde começar a investigar. São 120 diagnósticos que mostram, em uma página só, o sintoma, as causas mais prováveis, as verificações na ordem certa e o próximo passo.",
@@ -200,7 +200,7 @@
     "pill": "⚡ ACESSO IMEDIATO",
     "h3": "TUDO FOI ORGANIZADO PARA SER CONSULTADO NO MEIO DO ATENDIMENTO.",
     "p": "Você abre o índice, acha o sintoma que está na sua frente e usa o diagnóstico com o problema ali, do seu lado.",
-    "imgAlt": "Pacote completo do HIDRODIAG: a caixa com os 120 diagnósticos e os 6 bônus",
+    "imgAlt": "Pacote completo do HIDRODIAG: a caixa com os 120 diagnósticos e os 4 bônus",
     "produto": "120 diagnósticos de problemas de hidráulica residencial",
     "_blocos": "Descrições conferidas com Downloads/Hidraulica Diagnosticos/Entregavel/plano/indice-120.json em 26/10/2026. Se o plano mudar, atualizar aqui.",
     "blocos": [
@@ -249,25 +249,11 @@
   },
   "bonus": {
     "h2": "E NÃO PARA POR AÍ… TEM MAIS!",
-    "sub": "No Plano Completo você também vai receber…",
-    "pill": "🎁 6 BÔNUS EXCLUSIVOS",
+    "sub": "Junto com os 120 diagnósticos, você também recebe…",
+    "pill": "🎁 4 BÔNUS EXCLUSIVOS",
     "valorTxt": "Valor:",
     "gratis": "GRÁTIS",
     "itens": [
-      {
-        "img": "assets/bonus-1.webp",
-        "tit": "+40 Diagnósticos Extras de Problemas Menos Frequentes",
-        "curto": "+40 Diagnósticos Extras de Problemas Menos Frequentes",
-        "txt": "Mais 40 diagnósticos daqueles casos que aparecem de vez em quando e que, justamente por isso, você não tem na ponta da língua. Mesma estrutura: sintoma, causas prováveis, verificações e próximo passo.",
-        "valor": 27
-      },
-      {
-        "img": "assets/bonus-2.webp",
-        "tit": "+30 Diagnósticos de Erros de Instalação Hidráulica",
-        "curto": "+30 Diagnósticos de Erros de Instalação",
-        "txt": "30 diagnósticos para perceber quando o problema não é da peça, e sim de como a instalação foi feita: caimento do esgoto, falta de ventilação, conexão mal colada, vedação errada. Serve para separar o que é manutenção do que é serviço mal feito.",
-        "valor": 27
-      },
       {
         "img": "assets/bonus-3.webp",
         "tit": "Guia Rápido de Ferramentas para Diagnóstico",
@@ -300,42 +286,29 @@
   },
   "oferta": {
     "faixa": "🔥 ÚLTIMA CHANCE: OFERTA TERMINA HOJE",
-    "h2": "ESCOLHA A MELHOR OPÇÃO PARA VOCÊ",
-    "basico": {
-      "tit": "PLANO BÁSICO",
-      "imgAlt": "Caixa do HIDRODIAG com os 120 diagnósticos",
-      "recebe": "Você recebe:",
+    "h2": "GARANTA O SEU HIDRODIAG HOJE",
+    "completo": {
+      "selo": "🔥 OFERTA DE HOJE",
+      "tit": "HIDRODIAG COMPLETO",
+      "tag": "⚡ 120 diagnósticos + 4 bônus",
+      "imgAlt": "Pacote completo do HIDRODIAG com os 4 bônus",
       "itens": [
         "120 Diagnósticos de Hidráulica Residencial",
         "Sintoma, causas prováveis, verificações e próximo passo em cada página",
         "Índice por sintoma e guia inicial de utilização",
         "Versão digital e imprimível",
-        "Acesso imediato e vitalício"
-      ],
-      "cta": "QUERO O PLANO BÁSICO"
-    },
-    "ponte": "Veja o que entra a mais no Plano Completo 👇",
-    "completo": {
-      "selo": "⚡ MAIS VENDIDO",
-      "tit": "PLANO COMPLETO",
-      "tag": "⚡ 120 diagnósticos + 6 bônus",
-      "imgAlt": "Pacote completo do HIDRODIAG com os 6 bônus",
-      "itens": [
-        "120 Diagnósticos de Hidráulica Residencial",
-        "Sintoma, causas prováveis, verificações e próximo passo em cada página",
-        "Índice por sintoma e guia inicial de utilização",
-        "Versão digital e imprimível"
+        "App no celular com busca por sintoma"
       ],
       "bonusPrefixo": "🎁 Bônus",
       "extras": [
         "Atualizações futuras da biblioteca",
         "<b>Acesso vitalício a todo o material</b>"
       ],
-      "cta": "QUERO O PLANO COMPLETO"
+      "cta": "QUERO O HIDRODIAG AGORA"
     },
     "de": "de",
     "economia": "Você economiza",
-    "argumento": "UMA ÚNICA PAREDE QUEBRADA NO LUGAR ERRADO CUSTA MAIS QUE O PLANO COMPLETO.",
+    "argumento": "UMA ÚNICA PAREDE QUEBRADA NO LUGAR ERRADO CUSTA MAIS QUE O HIDRODIAG INTEIRO.",
     "argumento2": "Os diagnósticos ficam com você para todos os atendimentos que vierem.",
     "seguro": "🔒 Compra 100% segura e garantida.",
     "por": "por:"
@@ -371,7 +344,7 @@
       {
         "icone": "email",
         "tit": "Abra o seu e-mail",
-        "txt": "Na mesma hora chega um e-mail com o acesso aos diagnósticos e aos bônus do seu plano.",
+        "txt": "Na mesma hora chega um e-mail com o acesso aos diagnósticos e aos bônus.",
         "itens": [
           "Chega na hora",
           "Organizado por sintoma",
