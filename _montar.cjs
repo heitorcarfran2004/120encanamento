@@ -72,11 +72,35 @@ function render(tpl, pilha, n) {
 }
 const faltando = new Set();
 
+// ---------- minificação (só performance: tira comentário e espaço, não mexe em texto nem em script externo) ----------
+// O HTML gerado sai enxuto; a fonte em _fonte/ continua legível e comentada.
+function minCss(css) {
+  return css.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\s+/g, ' ')
+    .replace(/\s*([{};,])\s*/g, '$1').replace(/:\s+/g, ':').replace(/;}/g, '}').trim();
+}
+function minJs(js) {
+  // conservador: tira só linha inteira de comentário, indentação e linha vazia (comentário no fim
+  // da linha fica, porque "//" pode estar dentro de uma URL ou string)
+  return js.split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('//')).join('\n');
+}
+function minificar(html) {
+  const partes = html.split(/(<script\b[^>]*>[\s\S]*?<\/script>|<style\b[^>]*>[\s\S]*?<\/style>)/i);
+  return partes.map((p, i) => {
+    if (i % 2) {
+      const m = p.match(/^(<(script|style)\b[^>]*>)([\s\S]*?)(<\/\2>)$/i);
+      if (!m) return p;
+      const corpo = m[2].toLowerCase() === 'style' ? minCss(m[3]) : (/\bsrc=/.test(m[1]) ? m[3] : minJs(m[3]));
+      return m[1] + corpo + m[4];
+    }
+    return p.replace(/<!--[\s\S]*?-->/g, '').replace(/\r/g, '').replace(/\n[ \t]+/g, '\n').replace(/\n{2,}/g, '\n');
+  }).join('');
+}
+
 const pastaSaida = path.join(__dirname, C.saida || '.');
 fs.mkdirSync(pastaSaida, { recursive: true });
 for (const arq of fs.readdirSync(path.join(__dirname, '_fonte')).filter((f) => f.endsWith('.html'))) {
   const tpl = fs.readFileSync(path.join(__dirname, '_fonte', arq), 'utf8');
-  fs.writeFileSync(path.join(pastaSaida, arq), render(tpl, [T], 0));
+  fs.writeFileSync(path.join(pastaSaida, arq), minificar(render(tpl, [T], 0)));
   console.log('ok', path.relative(__dirname, path.join(pastaSaida, arq)));
 }
 if (faltando.size) { console.log('TEXTOS QUE FALTAM no ' + idioma + '.json:', [...faltando].join(', ')); process.exitCode = 1; }

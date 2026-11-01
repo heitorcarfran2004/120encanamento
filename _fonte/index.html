@@ -11,10 +11,14 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0B2340">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap">
-<link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
+<!-- Fontes no próprio site (antes vinham do Google Fonts e travavam a primeira pintura). Mesmos arquivos, subconjunto latin. -->
+<link rel="preload" as="font" type="font/woff2" href="{{base}}assets/fonts/inter-latin-v20.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="{{base}}assets/fonts/poppins-900-latin-v24.woff2" crossorigin>
+<style>@font-face{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:swap;src:url({{base}}assets/fonts/inter-latin-v20.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:swap;src:url({{base}}assets/fonts/poppins-700-latin-v24.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:800;font-display:swap;src:url({{base}}assets/fonts/poppins-800-latin-v24.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:900;font-display:swap;src:url({{base}}assets/fonts/poppins-900-latin-v24.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}</style>
+<link rel="preload" as="image" href="assets/hero.webp" imagesrcset="assets/hero-640.webp 640w, assets/hero-800.webp 800w, assets/hero.webp 1000w" imagesizes="(max-width: 680px) calc(100vw - 40px), 620px" fetchpriority="high">
 
 <!-- META PIXEL: trocar o ID (config.pixelMeta no textos/pt.json) quando o Cadastrador criar o pixel desta oferta -->
 <script>
@@ -277,7 +281,7 @@ footer a{color:#C9D5E4}
     <span class="pill">{{hero.pill}}</span>
     <h1>{{hero.h1}}</h1>
     <p class="sub">{{hero.sub}}</p>
-    <img class="hero-img" src="assets/hero.webp" width="1000" height="1000" alt="{{hero.imgAlt}}" fetchpriority="high">
+    <img class="hero-img" src="assets/hero.webp" srcset="assets/hero-640.webp 640w, assets/hero-800.webp 800w, assets/hero.webp 1000w" sizes="(max-width: 680px) calc(100vw - 40px), 620px" width="1000" height="1000" alt="{{hero.imgAlt}}" fetchpriority="high">
     <a class="btn" href="#oferta">{{hero.cta}}</a>
     <div class="texto">
       <p>{{hero.p1}}</p>
@@ -296,8 +300,8 @@ footer a{color:#C9D5E4}
     <h2>{{fichas.h2}}</h2>
   </div>
   <div class="faixa"><div class="trilho" id="trilho">
-    {{#fichas.trilho1}}<figure><img src="{{img}}" width="600" height="800" alt="{{alt}}" loading="lazy" {{#ref}}data-placeholder="ref"{{/ref}}></figure>{{/fichas.trilho1}}
-    {{#fichas.trilho1}}<figure aria-hidden="true"><img src="{{img}}" width="600" height="800" alt="" loading="lazy" {{#ref}}data-placeholder="ref"{{/ref}}></figure>{{/fichas.trilho1}}
+    {{#fichas.trilho1}}<figure><img src="{{img}}" width="600" height="800" alt="{{alt}}" loading="lazy" decoding="async" {{#ref}}data-placeholder="ref"{{/ref}}></figure>{{/fichas.trilho1}}
+    {{#fichas.trilho1}}<figure aria-hidden="true"><img src="{{img}}" width="600" height="800" alt="" loading="lazy" decoding="async" {{#ref}}data-placeholder="ref"{{/ref}}></figure>{{/fichas.trilho1}}
   </div></div>
   <p class="dica">{{fichas.dica}}</p>
 </section>
@@ -309,7 +313,7 @@ footer a{color:#C9D5E4}
     <div class="grade g2" style="max-width:860px;margin-left:auto;margin-right:auto">
       {{#possui.itens}}<div class="card"><div class="ico"><svg><use href="#i-{{icone}}"/></svg></div><span>{{txt}}</span></div>{{/possui.itens}}
     </div>
-    <img class="celular" src="assets/celular.webp" width="1122" height="1402" alt="{{fichas.celularAlt}}" loading="lazy">
+    <img class="celular" src="assets/celular.webp" width="1122" height="1402" alt="{{fichas.celularAlt}}" loading="lazy" decoding="async">
   </div>
 </section>
 
@@ -321,8 +325,8 @@ footer a{color:#C9D5E4}
     <a class="btn" href="#oferta">{{urgencia.cta}}</a>
   </div>
   <div class="faixa" style="margin-top:40px"><div class="trilho" id="trilho2" style="animation-direction:reverse">
-    {{#urgencia.trilho2}}<figure><img src="{{img}}" width="600" height="800" alt="{{alt}}" loading="lazy" {{#ref}}data-placeholder="ref"{{/ref}}></figure>{{/urgencia.trilho2}}
-    {{#urgencia.trilho2}}<figure aria-hidden="true"><img src="{{img}}" width="600" height="800" alt="" loading="lazy" {{#ref}}data-placeholder="ref"{{/ref}}></figure>{{/urgencia.trilho2}}
+    {{#urgencia.trilho2}}<figure><img src="{{img}}" width="600" height="800" alt="{{alt}}" loading="lazy" decoding="async" {{#ref}}data-placeholder="ref"{{/ref}}></figure>{{/urgencia.trilho2}}
+    {{#urgencia.trilho2}}<figure aria-hidden="true"><img src="{{img}}" width="600" height="800" alt="" loading="lazy" decoding="async" {{#ref}}data-placeholder="ref"{{/ref}}></figure>{{/urgencia.trilho2}}
   </div></div>
 </section>
 
@@ -344,7 +348,7 @@ footer a{color:#C9D5E4}
       <span class="pill">{{recebe.pill}}</span>
       <h3 class="grande">{{recebe.h3}}</h3>
       <p class="lead">{{recebe.p}}</p>
-      <img class="pacote-img" src="assets/hero.webp" width="1000" height="1000" alt="{{recebe.imgAlt}}" loading="lazy">
+      <img class="pacote-img" src="assets/hero.webp" srcset="assets/hero-640.webp 640w, assets/hero-800.webp 800w, assets/hero.webp 1000w" sizes="(max-width: 680px) 90vw, 620px" width="1000" height="1000" alt="{{recebe.imgAlt}}" loading="lazy" decoding="async">
       <ul class="lista-rec">
         <li class="forte">{{recebe.produto}}</li>
         {{#recebe.blocos}}<li><b>{{tit}}</b> {{txt}}</li>{{/recebe.blocos}}
@@ -363,7 +367,7 @@ footer a{color:#C9D5E4}
     <span class="pill">{{bonus.pill}}</span>
     <div class="grade">
       {{#bonus.itens}}<div class="bon">
-        <img src="{{img}}" width="600" height="600" alt="{{tit}}" loading="lazy">
+        <img src="{{img}}" width="600" height="600" alt="{{tit}}" loading="lazy" decoding="async">
         <span class="tag">BÔNUS #{{@n}}</span>
         <div class="in"><h3>{{tit}}</h3><p>{{txt}}</p>
           <p class="val"><span>{{bonus.valorTxt}} <s>{{valorFmt}}</s> <b>{{bonus.gratis}}</b></span></p></div>
@@ -382,7 +386,7 @@ footer a{color:#C9D5E4}
         <span class="selo-top">{{oferta.completo.selo}}</span>
         <span class="chance">{{oferta.faixa}}</span>
         <h3>{{oferta.completo.tit}}</h3>
-        <img class="img" src="assets/hero.webp" width="1000" height="1000" alt="{{oferta.completo.imgAlt}}" loading="lazy">
+        <img class="img" src="assets/hero.webp" width="1000" height="1000" alt="{{oferta.completo.imgAlt}}" loading="lazy" decoding="async">
         <span class="tag">{{oferta.completo.tag}}</span>
         <ul class="lista">
           {{#oferta.completo.itens}}<li>{{.}}</li>{{/oferta.completo.itens}}

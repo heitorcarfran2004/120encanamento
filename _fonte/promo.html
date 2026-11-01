@@ -22,9 +22,13 @@ fbq('track', 'PageView');
 </script>
 <!-- UTMify: script de rastreamento das UTMs (mesmo do index) -->
 <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap">
+<!-- Fontes no próprio site (antes vinham do Google Fonts e travavam a primeira pintura). Mesmos arquivos, subconjunto latin. -->
+<link rel="preload" as="font" type="font/woff2" href="{{base}}assets/fonts/inter-latin-v20.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="{{base}}assets/fonts/poppins-900-latin-v24.woff2" crossorigin>
+<style>@font-face{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:swap;src:url({{base}}assets/fonts/inter-latin-v20.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:swap;src:url({{base}}assets/fonts/poppins-700-latin-v24.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:800;font-display:swap;src:url({{base}}assets/fonts/poppins-800-latin-v24.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:900;font-display:swap;src:url({{base}}assets/fonts/poppins-900-latin-v24.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}</style>
 <style>
 :root{--navy:#0B2340;--navy2:#12305A;--neon:#F28C1B;--ouro:#F28C1B;--verde:#18A058;--verde-esc:#12804A;--vermelho:#D93A3A;--tinta:#18232B;--cinza:#4A5B68;--borda:#DCE5EB}
 *{box-sizing:border-box;margin:0;padding:0}
