@@ -40,6 +40,11 @@ img{max-width:100%;height:auto;display:block}
 h1{font-family:Poppins,Inter,sans-serif;font-size:clamp(28px,7.4vw,40px);font-weight:900;line-height:1.1;margin-top:14px}
 h1 .n{color:var(--neon)}
 .sub{color:#C9D7E0;margin-top:12px;font-size:16.5px}
+.celular-mock{position:relative;width:min(80%,320px);margin:0 auto;padding:11px;background:#0A0F18;border-radius:46px;box-shadow:0 0 0 2px #2B3646,0 0 0 4px #121A26,0 28px 56px -22px rgba(11,35,64,.7)}
+.celular-mock::before{content:"";position:absolute;top:11px;left:50%;transform:translateX(-50%);width:32%;height:22px;background:#0A0F18;border-radius:0 0 14px 14px;z-index:3}
+.celular-mock::after{content:"";position:absolute;right:-6px;top:22%;width:3px;height:64px;background:#2B3646;border-radius:0 3px 3px 0}
+.celular-mock .tela{border-radius:36px;overflow:hidden;background:#000;position:relative;z-index:1}
+.celular-mock vturb-smartplayer{max-width:none!important}
 .video{margin-top:24px}
 .video h2{font-family:Poppins,Inter,sans-serif;font-size:clamp(17px,5vw,22px);font-weight:800;margin-bottom:12px}
 .capa{width:80%;max-width:340px;margin:20px auto 0;border-radius:16px}
@@ -70,7 +75,7 @@ li::before{content:"✓";color:var(--verde);font-weight:900}
   <p class="sub">{{promo.sub}}</p>
   <div class="video">
     <h2>{{promo.videoTit}}</h2>
-    <vturb-smartplayer id="vid-6ae7619669012d4116a12324" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
+    <div class="celular-mock"><div class="tela"><vturb-smartplayer id="vid-6ae7619669012d4116a12324" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer></div></div>
     <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/59fb2471-bbf9-48ae-ad59-009b3aba8bd1/players/6ae7619669012d4116a12324/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
   </div>
   <img class="capa" src="{{base}}assets/basico.webp" width="1000" height="1000" alt="{{meta.titulo}}">

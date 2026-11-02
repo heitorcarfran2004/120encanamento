@@ -109,6 +109,11 @@ h2{font-size:clamp(27px,6.2vw,44px);font-weight:900;text-align:center}
 .trilho figure{flex:0 0 auto;padding:0 10px}
 .trilho img{height:clamp(420px,60vw,560px);width:auto;border-radius:10px;box-shadow:0 18px 40px -18px rgba(0,0,0,.55);-webkit-user-drag:none}
 @keyframes anda{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.celular-mock{position:relative;width:min(80%,320px);margin:0 auto;padding:11px;background:#0A0F18;border-radius:46px;box-shadow:0 0 0 2px #2B3646,0 0 0 4px #121A26,0 28px 56px -22px rgba(11,35,64,.7)}
+.celular-mock::before{content:"";position:absolute;top:11px;left:50%;transform:translateX(-50%);width:32%;height:22px;background:#0A0F18;border-radius:0 0 14px 14px;z-index:3}
+.celular-mock::after{content:"";position:absolute;right:-6px;top:22%;width:3px;height:64px;background:#2B3646;border-radius:0 3px 3px 0}
+.celular-mock .tela{border-radius:36px;overflow:hidden;background:#000;position:relative;z-index:1}
+.celular-mock vturb-smartplayer{max-width:none!important}
 .video-app{margin-top:44px;text-align:center}
 .video-app h3{font-size:clamp(24px,5.4vw,32px);font-weight:900;margin-bottom:18px}
 .dica{text-align:center;font-size:14px;color:var(--cinza);margin-top:10px}
@@ -317,7 +322,7 @@ footer a{color:#C9D5E4}
   </div></div>
   <div class="wrap video-app">
     <h3>{{fichas.videoTit}}</h3>
-    <vturb-smartplayer id="vid-6ae7619669012d4116a12324" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
+    <div class="celular-mock"><div class="tela"><vturb-smartplayer id="vid-6ae7619669012d4116a12324" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer></div></div>
     <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/59fb2471-bbf9-48ae-ad59-009b3aba8bd1/players/6ae7619669012d4116a12324/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
   </div>
 </section>
