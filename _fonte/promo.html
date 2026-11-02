@@ -40,6 +40,8 @@ img{max-width:100%;height:auto;display:block}
 h1{font-family:Poppins,Inter,sans-serif;font-size:clamp(28px,7.4vw,40px);font-weight:900;line-height:1.1;margin-top:14px}
 h1 .n{color:var(--neon)}
 .sub{color:#C9D7E0;margin-top:12px;font-size:16.5px}
+.video{margin-top:24px}
+.video h2{font-family:Poppins,Inter,sans-serif;font-size:clamp(17px,5vw,22px);font-weight:800;margin-bottom:12px}
 .capa{width:80%;max-width:340px;margin:20px auto 0;border-radius:16px}
 .cartao{background:#fff;color:var(--tinta);border-radius:22px;padding:22px;margin-top:22px;box-shadow:0 0 0 3px var(--neon),0 18px 40px rgba(0,0,0,.35)}
 ul{list-style:none;text-align:left}
@@ -50,6 +52,15 @@ li::before{content:"✓";color:var(--verde);font-weight:900}
 .btn{display:block;margin-top:16px;text-decoration:none;background:linear-gradient(180deg,#1DB865,var(--verde-esc));color:#fff;font-weight:900;font-size:19px;text-transform:uppercase;padding:19px;border-radius:14px;box-shadow:0 10px 24px rgba(24,160,88,.38)}
 .nota{font-size:13px;color:var(--cinza);margin-top:12px}
 </style>
+<!-- vturb: carregamento otimizado do vídeo da área de membros (script do painel da vturb) -->
+<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+<link rel="preload" href="https://scripts.converteai.net/59fb2471-bbf9-48ae-ad59-009b3aba8bd1/players/6ae7619669012d4116a12324/v4/player.js" as="script">
+<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+<link rel="preload" href="https://cdn.converteai.net/59fb2471-bbf9-48ae-ad59-009b3aba8bd1/6ae7618d217265d6b61b3e92/main.m3u8" as="fetch">
+<link rel="dns-prefetch" href="https://cdn.converteai.net">
+<link rel="dns-prefetch" href="https://scripts.converteai.net">
+<link rel="dns-prefetch" href="https://images.converteai.net">
+<link rel="dns-prefetch" href="https://license.vturb.com">
 </head>
 <body>
 <div class="topo">{{promo.topo}}</div>
@@ -57,6 +68,11 @@ li::before{content:"✓";color:var(--verde);font-weight:900}
   <span class="pill">{{promo.pill}}</span>
   <h1>{{promo.h1}}</h1>
   <p class="sub">{{promo.sub}}</p>
+  <div class="video">
+    <h2>{{promo.videoTit}}</h2>
+    <vturb-smartplayer id="vid-6ae7619669012d4116a12324" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
+    <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/59fb2471-bbf9-48ae-ad59-009b3aba8bd1/players/6ae7619669012d4116a12324/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+  </div>
   <img class="capa" src="{{base}}assets/basico.webp" width="1000" height="1000" alt="{{meta.titulo}}">
   <div class="cartao">
     <ul>{{#promo.itens}}<li>{{.}}</li>{{/promo.itens}}</ul>

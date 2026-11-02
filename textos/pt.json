@@ -54,7 +54,8 @@
     "de": "De",
     "por": "por apenas",
     "cta": "QUERO POR {{p.saida}}",
-    "nota": "Pagamento único · sem mensalidade · 🔒 Compra 100% segura"
+    "nota": "Pagamento único · sem mensalidade · 🔒 Compra 100% segura",
+    "videoTit": "Veja o que você está perdendo 👇"
   },
   "popup": {
     "tit": "Espera, só nesta tela 🔧",
@@ -85,7 +86,6 @@
   "fichas": {
     "h2": "VEJA COMO SÃO OS DIAGNÓSTICOS QUE VOCÊ VAI RECEBER",
     "celularAlt": "Mão de encanador segurando o celular com um diagnóstico aberto, na frente de uma caixa acoplada aberta",
-    "dica": "Toque numa ficha para ver em tamanho grande",
     "trilho1": [
       {
         "img": "assets/fichas/a1.webp",
@@ -112,7 +112,8 @@
         "alt": "Diagnóstico 047: TORNEIRA DA COZINHA COM POUCA ÁGUA E O RESTO NORMAL"
       }
     ],
-    "_fichas": "Fichas do nosso entregável (Downloads/Hidraulica Diagnosticos/Entregavel/paginas): as 12 dos criativos CRT 01-13."
+    "_fichas": "Fichas do nosso entregável (Downloads/Hidraulica Diagnosticos/Entregavel/paginas): as 12 dos criativos CRT 01-13.",
+    "videoTit": "Veja o app por dentro 👇"
   },
   "possui": {
     "h2": "OS +120 DIAGNÓSTICOS POSSUEM:",
